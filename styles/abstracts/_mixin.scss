@@ -15,7 +15,7 @@
   
   @mixin selectionTextGlobal {
     ::selection {
-      background-color: $color-secondary;
+      background-color: $color-grey;
       color: $color-white;
     }
   }

@@ -11,16 +11,27 @@
 
   &-primary {
     color: $color-white;
-    background-color: $color-primary-medium;
+    background-color: $color-primary;
     transition: all 0.2s ease-in-out;
-    border: 2px solid $color-primary-medium;
+    border: 2px solid $color-primary;
+
+    &:hover {
+      background-color: transparent;
+      border: 2px solid $color-primary;
+      color: $color-primary;
+    }
   }
 
   &-secondary {
-    color: $color-primary-medium;
+    color: $color-primary;
     background-color: transparent;
-    border: 2px solid $color-primary-medium;
+    border: 2px solid $color-primary;
     transition: all 0.2s ease-in-out;
+
+    &:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
   }
 
   &-lg {
@@ -55,9 +66,5 @@
     padding: 0.5rem 1.5rem;
     font-size: 1.5rem;
     font-weight: 500;
-  }
-
-  &:hover {
-    transform: scale(0.97);
   }
 }

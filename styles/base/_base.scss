@@ -18,10 +18,6 @@ body {
   box-sizing: border-box;
   background: $color-background;
   color: $color-primary;
-
-  &::selection {
-    color: $color-secondary;
-  }
 }
 
 @include selectionTextGlobal;
