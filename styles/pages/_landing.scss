@@ -2,15 +2,33 @@
   &__container {
     &__hero {
       &__container {
+        @include respond(phone) {
+          padding: 0 5rem;
+        }
+
+        @include respond(small-phone) {
+          padding: 0 2rem;
+        }
+
         &__content {
           display: flex;
           align-items: center;
           justify-content: center;
 
+          @include respond(phone) {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+
           &__image {
             width: 35rem;
 
-            span {
+            @include respond(tab-port) {
+              width: 25rem;
+            }
+
+            @include respond(phone) {
+              width: 15rem;
             }
           }
 
@@ -18,7 +36,13 @@
             width: 35%;
             margin-left: 4rem;
 
-            &__heading {
+            @include respond(tab-land) {
+              width: 40%;
+            }
+
+            @include respond(phone) {
+              width: 100%;
+              margin: 2rem 0 0 0;
             }
 
             &__subheading {
@@ -27,10 +51,18 @@
           }
 
           &__actions {
-            &-primary {
+            button {
+              @include respond(phone) {
+                width: 100%;
+              }
             }
+
             &-secondary {
               margin-left: 1rem;
+
+              @include respond(phone) {
+                margin: 1rem 0 0 0;
+              }
             }
           }
         }
@@ -42,9 +74,22 @@
         width: 65%;
         margin: auto;
         padding: 5rem;
-        background-image: linear-gradient(to bottom right, #da2f35, #ee555a);
+        background-image: linear-gradient(to bottom right, #c23237, #ee555a);
         border-radius: 10px;
         box-shadow: 5px 5px 4px #cecece;
+
+        @include respond(tab-land) {
+          width: 85%;
+        }
+
+        @include respond(tab-port) {
+          padding: 7rem;
+        }
+
+        @include respond(small-phone) {
+          width: 90%;
+          padding: 3rem;
+        }
 
         &__content {
           display: flex;
@@ -65,21 +110,9 @@
             display: flex;
             align-items: center;
 
-            &__item {
-              display: flex;
-              align-items: center;
-              padding: 2rem;
-              border-radius: 5px;
-
-              &__image {
-                width: 10rem;
-                max-height: 10rem;
-              }
-
-              &__text {
-                margin: 0 0 0 2rem;
-                color: $color-white;
-              }
+            @include respond(tab-port) {
+              flex-direction: column;
+              align-items: flex-start;
             }
           }
         }

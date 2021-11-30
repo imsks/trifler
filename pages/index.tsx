@@ -1,8 +1,9 @@
 import React from 'react';
-import { Footer, Navbar } from 'components';
+import { AboutProductItem, Footer, Navbar } from 'components';
 import Image from 'next/image';
-import { AccessDenied, EasyConnect, HeaderHero, MakeGroups } from 'assets';
+import { HeaderHero } from 'assets';
 import { Spacer } from 'components';
+import { aboutProductItems } from 'database';
 
 const IndexPage = () => (
   <main className="landing">
@@ -54,30 +55,18 @@ const IndexPage = () => (
             </div>
             <Spacer block="6" />
             <div className="landing__container__aboutproduct__container__content__items">
-              <div className="landing__container__aboutproduct__container__content__items__item">
-                <div className="landing__container__aboutproduct__container__content__items__item__image">
-                  <Image src={EasyConnect} alt="trifler-easy-connect" />
-                </div>
-                <h3 className="landing__container__aboutproduct__container__content__items__item__text strong-text">
-                  Easy connect with new people
-                </h3>
-              </div>
-              <div className="landing__container__aboutproduct__container__content__items__item">
-                <div className="landing__container__aboutproduct__container__content__items__item__image">
-                  <Image src={AccessDenied} alt="trifler-access-denied" />
-                </div>
-                <h3 className="landing__container__aboutproduct__container__content__items__item__text strong-text">
-                  No access to your whatsapp stories
-                </h3>
-              </div>
-              <div className="landing__container__aboutproduct__container__content__items__item">
-                <div className="landing__container__aboutproduct__container__content__items__item__image">
-                  <Image src={MakeGroups} alt="trifler-make-groups" />
-                </div>
-                <h3 className="landing__container__aboutproduct__container__content__items__item__text strong-text">
-                  Categorize contacts and access them in one click
-                </h3>
-              </div>
+              {aboutProductItems.map((productItem, key) => {
+                const { text, imageSrc, imageAlt } = productItem;
+
+                return (
+                  <AboutProductItem
+                    key={key}
+                    text={text}
+                    imageSrc={imageSrc}
+                    imageAlt={imageAlt}
+                  />
+                );
+              })}
             </div>
           </div>
         </div>
