@@ -1,4 +1,4 @@
-const title = 'Next App';
+const title = 'Trifler';
 const description = '';
 
 const SEO = {
