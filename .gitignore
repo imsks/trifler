@@ -6,3 +6,5 @@ node_modules
 .next
 temp.txt
 /data
+firebase.json
+.firebaserc

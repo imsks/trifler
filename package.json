@@ -8,9 +8,12 @@
     "type-check": "tsc",
     "test": "NODE_ENV=development jest",
     "test:dev": "NODE_ENV=development jest --watchAll",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
+    "dexie": "^3.2.0",
+    "dexie-react-hooks": "^1.0.7",
     "next": "latest",
     "next-seo": "^4.28.1",
     "node-sass": "^4.14.1",
