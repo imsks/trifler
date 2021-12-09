@@ -1,0 +1,61 @@
+.bottomnavbar {
+  &__container {
+    overflow: hidden;
+    position: fixed;
+    bottom: 3rem;
+    width: 100%;
+
+    @include respond(phone) {
+      bottom: 0;
+    }
+
+    &__content {
+      padding: 0.5rem;
+      width: 30rem;
+      margin: auto;
+      background-color: $color-border;
+      border-radius: 10px;
+      border: 1px solid $color-grey-light;
+
+      @include respond(phone) {
+        width: 100%;
+        border-radius: 0;
+      }
+
+      &__items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0.5rem;
+
+        @include respond(phone) {
+          justify-content: space-around;
+        }
+
+        &__item {
+          font-size: 3rem;
+          color: $color-grey;
+          padding: 0.8rem 1.6rem;
+          cursor: pointer;
+          border-radius: 10px;
+
+          @include respond(phone) {
+            font-size: 1.8rem;
+            padding: 1rem 2rem;
+          }
+
+          &:hover {
+            transition: 0.3s all;
+            background-color: $color-primary-light;
+            color: $color-white;
+          }
+
+          &--active {
+            background-color: $color-primary-light;
+            color: $color-white;
+          }
+        }
+      }
+    }
+  }
+}

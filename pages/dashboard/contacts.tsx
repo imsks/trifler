@@ -1,14 +1,16 @@
 import React from 'react';
-import { Navbar } from 'components';
+import { Navbar, BottomNavbar } from 'components';
 
-const Dashboard = () => {
+const Contacts = () => {
   return (
     <main className="dashboard">
       <div className="dashboard__container">
         <Navbar />
+        <BottomNavbar />
+        <h1>CONTACTS</h1>
       </div>
     </main>
   );
 };
 
-export default Dashboard;
+export default Contacts;
