@@ -1,23 +1,20 @@
 // db.ts
 import Dexie, { Table } from 'dexie';
-
-export interface Friend {
-  id?: number;
-  name: string;
-  age: number;
-}
+import { Contact, Category, User } from 'database';
 
 export class MySubClassedDexie extends Dexie {
-  // 'friends' is added by dexie when declaring the stores()
-  // We just tell the typing system this is the case
-  friends!: Table<Friend>;
+  contacts!: Table<Contact>;
+  categories!: Table<Category>;
+  users!: Table<User>;
 
   constructor() {
-    super('myDatabase');
+    super('triflerDb');
     this.version(1).stores({
-      friends: '++id, name, age', // Primary key and indexed props
+      contacts: 'id, name, contactNo, categoryId, addedon, updatedOn',
+      categories: 'id, name, description, contacts, addedon, updatedOn',
+      users: 'id, joinedOn, isStartedUsingApp',
     });
   }
 }
 
-export const localDB = new MySubClassedDexie();
+export const indexDB = new MySubClassedDexie();

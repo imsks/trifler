@@ -4,6 +4,8 @@ import {
   handleGoCategory,
   handleGoContacts,
 } from 'utils/components/layout/bottomnavbar';
+import { getRanddomID } from 'utils/functions';
+import pageRoutes from 'utils/page/routes';
 
 export {
   handleUseApp,
@@ -11,4 +13,6 @@ export {
   handleGoDashboard,
   handleGoCategory,
   handleGoContacts,
+  getRanddomID,
+  pageRoutes,
 };

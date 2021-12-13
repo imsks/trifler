@@ -1,11 +1,15 @@
+import { createUser } from 'database';
 import Router from 'next/router';
+import { pageRoutes } from 'utils';
 
 const handleUseApp = () => {
-  Router.push('/dashboard');
+  createUser().then(() => {
+    Router.push(pageRoutes.dashboard);
+  });
 };
 
 const handleKnowMore = () => {
-  Router.push('/#about');
+  Router.push(pageRoutes.landingPage.aboutSection);
 };
 
 export { handleUseApp, handleKnowMore };

@@ -5,8 +5,11 @@ import { HeaderHero } from 'assets';
 import { Spacer } from 'components';
 import { aboutProductItems } from 'database';
 import { handleUseApp, handleKnowMore } from 'utils';
+import { useRedirectToDashboard } from 'hooks';
 
 const IndexPage = () => {
+  useRedirectToDashboard();
+
   return (
     <main className="landing">
       <section className="landing__container">
