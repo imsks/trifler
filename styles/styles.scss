@@ -9,8 +9,10 @@
 @import 'layout/footer';
 @import 'layout/bottomnavbar';
 
-@import 'components/buttons';
-@import 'components/form';
+@import 'components/global/buttons';
+@import 'components/global/form';
+@import 'components/global/loader';
+
 
 @import 'components/page/landing';
 

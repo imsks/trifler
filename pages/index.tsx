@@ -1,5 +1,5 @@
 import React from 'react';
-import { AboutProductItem, Button, Footer, Navbar } from 'components';
+import { AboutProductItem, Button, Footer, Loader, Navbar } from 'components';
 import Image from 'next/image';
 import { HeaderHero } from 'assets';
 import { Spacer } from 'components';
@@ -8,7 +8,9 @@ import { handleUseApp, handleKnowMore } from 'utils';
 import { useRedirectToDashboard } from 'hooks';
 
 const IndexPage = () => {
-  useRedirectToDashboard();
+  const isLoggedIn = useRedirectToDashboard();
+
+  if (isLoggedIn) return <Loader />;
 
   return (
     <main className="landing">

@@ -1,9 +1,11 @@
 import React from 'react';
-import { Navbar, BottomNavbar } from 'components';
+import { Navbar, BottomNavbar, Loader } from 'components';
 import { useRedirectToDashboard } from 'hooks';
 
 const Dashboard = () => {
-  useRedirectToDashboard();
+  const isLoggedIn = useRedirectToDashboard();
+
+  if (!isLoggedIn) return <Loader />;
 
   return (
     <main className="dashboard">

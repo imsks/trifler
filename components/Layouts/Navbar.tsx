@@ -3,14 +3,21 @@ import Link from 'next/link';
 import { Logo } from 'assets';
 import { Button } from 'components';
 import { NavbarProps } from 'interfaces';
-import { handleUseApp } from 'utils';
+import { handleUseApp, pageRoutes } from 'utils';
+import { useRedirectToDashboard } from 'hooks';
 
 const Navbar = ({ isLanding = false }: NavbarProps) => {
+  const isLoggedIn = useRedirectToDashboard();
+
+  const logoUrl = isLoggedIn
+    ? pageRoutes.dashboard
+    : pageRoutes.landingPage.index;
+
   return (
     <nav className="navbar">
       <div className="navbar__container">
         <div className="navbar__container__logo">
-          <Link href="/" passHref={true}>
+          <Link href={logoUrl} passHref={true}>
             <a>
               <Image src={Logo} alt="trifler-logo" />
             </a>
