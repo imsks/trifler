@@ -7,6 +7,7 @@ import Spacer from 'components/Global/Spacing';
 import Loader from 'components/Global/Loader';
 import { AboutProductItem } from 'components/Page/Landing';
 import * as Icons from 'components/Global/Icons';
+import IconContainer from 'components/Containers/Icon';
 
 export {
   Navbar,
@@ -18,4 +19,5 @@ export {
   Icons,
   BottomNavbar,
   Icon,
+  IconContainer,
 };

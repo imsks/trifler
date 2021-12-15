@@ -1,4 +1,4 @@
-export interface AddContactModel {
+export interface Contact {
   id: string;
   name: string;
   contactNo: string;
@@ -7,16 +7,11 @@ export interface AddContactModel {
   updatedOn: Date;
 }
 
-export interface AddCategoryModel {
+export interface Category {
   id: string;
   name: string;
   description?: string;
+  contacts?: Contact[];
   addedon: Date;
   updatedOn: Date;
-}
-
-export interface AddUserModel {
-  id: string;
-  joinedOn: Date;
-  isStartedUsingApp?: boolean;
 }

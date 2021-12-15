@@ -1,10 +1,10 @@
-import { indexDB, User } from 'database';
+import { indexDB, AddUserModel } from 'database';
 import { getRanddomID } from 'utils';
 
 // Create A User in IndexDB
 const createUser = async () => {
   return new Promise((resolve, reject) => {
-    const userJoinedData: User = {
+    const userJoinedData: AddUserModel = {
       id: getRanddomID(),
       joinedOn: new Date(Date.now()),
       isStartedUsingApp: true,

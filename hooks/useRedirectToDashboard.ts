@@ -9,7 +9,9 @@ const useRedirectToDashboard = () => {
   const router = useRouter();
 
   const redirectPath =
-    router.asPath === '/' ? pageRoutes.dashboard : router.asPath;
+    router.asPath === pageRoutes.landingPage.index
+      ? pageRoutes.dashboard
+      : router.asPath;
 
   useEffect(() => {
     setTimeout(() => {
