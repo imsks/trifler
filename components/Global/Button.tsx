@@ -1,10 +1,7 @@
-interface ButtonProps {
-  text: string;
-  className?: string;
-  onclick?: () => void;
-}
+import { ButtonProps, FloatingActionButtonProps } from 'interfaces';
+import Icon from './Icon';
 
-const Button = ({
+export const Button = ({
   text,
   className = 'btn-primary btn-md',
   onclick,
@@ -16,4 +13,13 @@ const Button = ({
   );
 };
 
-export default Button;
+export const FloatingActionButton = ({
+  IconName,
+  onClick,
+}: FloatingActionButtonProps) => {
+  return (
+    <button className="floatingactionbutton btn" onClick={onClick}>
+      <Icon IconName={IconName} className="floatingactionbutton__icon" />
+    </button>
+  );
+};

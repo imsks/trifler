@@ -1,0 +1,17 @@
+.floatingactionbutton {
+  width: 7rem;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-primary;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 10rem;
+  right: 10rem;
+
+  &__icon {
+    font-size: 3rem;
+    display: flex;
+  }
+}

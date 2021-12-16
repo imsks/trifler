@@ -1,7 +1,7 @@
 import Navbar from 'components/Layouts/Navbar';
 import Footer from 'components/Layouts/Footer';
 import BottomNavbar from 'components/Layouts/BottomNavbar';
-import Button from 'components/Global/Button';
+import { Button, FloatingActionButton } from 'components/Global/Button';
 import Icon from 'components/Global/Icon';
 import Spacer from 'components/Global/Spacing';
 import Loader from 'components/Global/Loader';
@@ -20,4 +20,5 @@ export {
   BottomNavbar,
   Icon,
   IconContainer,
+  FloatingActionButton,
 };
