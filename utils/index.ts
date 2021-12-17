@@ -4,6 +4,10 @@ import {
   handleGoCategory,
   handleGoContacts,
 } from 'utils/components/layout/bottomnavbar';
+import {
+  handleAddContact,
+  handleAddCategory,
+} from 'utils/components/layout/emptycontainer';
 import { getRanddomID } from 'utils/functions';
 import pageRoutes from 'utils/page/routes';
 
@@ -15,4 +19,6 @@ export {
   handleGoContacts,
   getRanddomID,
   pageRoutes,
+  handleAddContact,
+  handleAddCategory,
 };

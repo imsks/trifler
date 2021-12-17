@@ -5,3 +5,4 @@ export * from 'interfaces/components/layouts/Navbar';
 export * from 'interfaces/components/page/Landing';
 export * from 'interfaces/database/modules';
 export * from 'interfaces/containers/icon';
+export * from 'interfaces/containers/emptycontainer';

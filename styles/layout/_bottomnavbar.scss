@@ -46,12 +46,12 @@
 
           &:hover {
             transition: 0.3s all;
-            background-color: $color-primary-light;
+            background-color: $color-primary;
             color: $color-white;
           }
 
           &--active {
-            background-color: $color-primary-light;
+            background-color: $color-primary;
             color: $color-white;
           }
         }

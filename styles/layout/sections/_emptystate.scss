@@ -1,0 +1,48 @@
+.emptystate {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    &__image {
+      width: 15rem;
+    }
+
+    &__text {
+      margin-top: 4rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include respond(tab-land) {
+        width: 40%;
+      }
+
+      @include respond(phone) {
+        width: 100%;
+        margin: 2rem 0 0 0;
+      }
+
+      &__subheading {
+        color: $color-grey;
+      }
+    }
+
+    &__actions {
+      button {
+        @include respond(phone) {
+          width: 100%;
+        }
+      }
+
+      &-secondary {
+        margin-left: 1rem;
+
+        @include respond(phone) {
+          margin: 1rem 0 0 0;
+        }
+      }
+    }
+  }
+}

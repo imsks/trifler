@@ -8,6 +8,7 @@ import Loader from 'components/Global/Loader';
 import { AboutProductItem } from 'components/Page/Landing';
 import * as Icons from 'components/Global/Icons';
 import IconContainer from 'components/Containers/Icon';
+import EmptyStateContainer from 'components/Layouts/Section/EmptyStateContainer';
 
 export {
   Navbar,
@@ -21,4 +22,5 @@ export {
   Icon,
   IconContainer,
   FloatingActionButton,
+  EmptyStateContainer,
 };

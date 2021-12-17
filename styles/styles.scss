@@ -8,6 +8,7 @@
 @import 'layout/navigation';
 @import 'layout/footer';
 @import 'layout/bottomnavbar';
+@import 'layout/sections/emptystate';
 
 @import 'components/global/buttons';
 @import 'components/global/form';
@@ -18,3 +19,5 @@
 
 @import 'pages/landing';
 @import 'pages/dashboard';
+@import 'pages/contacts';
+@import 'pages/categories';
