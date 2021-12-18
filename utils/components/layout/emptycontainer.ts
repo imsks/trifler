@@ -1,12 +1,12 @@
 import Router from 'next/router';
 import { pageRoutes } from 'utils';
 
-const handleAddContact = () => {
+const handleGoToAddContact = () => {
   Router.push(`${pageRoutes.dashboard}/${pageRoutes.contacts}/add`);
 };
 
-const handleAddCategory = () => {
+const handleGoToAddCategory = () => {
   Router.push(`${pageRoutes.dashboard}/${pageRoutes.categories}/add`);
 };
 
-export { handleAddContact, handleAddCategory };
+export { handleGoToAddContact, handleGoToAddCategory };

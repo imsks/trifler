@@ -4,7 +4,7 @@ export interface AddContactModel {
   contactNo: string;
   categoryId?: string;
   addedon: Date;
-  updatedOn: Date;
+  updatedOn?: Date;
 }
 
 export interface AddCategoryModel {
@@ -12,7 +12,7 @@ export interface AddCategoryModel {
   name: string;
   description?: string;
   addedon: Date;
-  updatedOn: Date;
+  updatedOn?: Date;
 }
 
 export interface AddUserModel {

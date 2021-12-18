@@ -15,7 +15,7 @@ const EmptyStateContainer = ({
       <Button
         text={ctaText}
         className="btn-primary btn-md emptystate__container__actions-primary"
-        onclick={ctaOnClick}
+        onClick={ctaOnClick}
       />
     </div>
   );

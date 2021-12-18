@@ -6,3 +6,23 @@
     }
   }
 }
+
+.addcategory {
+  &__container {
+    &__content {
+      width: 50%;
+      margin: auto;
+
+      &__header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &__title {
+          font-weight: 700;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}

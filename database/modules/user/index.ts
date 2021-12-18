@@ -16,7 +16,7 @@ const createUser = async () => {
         resolve(true);
       })
       .catch((error) => {
-        reject(error);
+        reject({ errorStack: error, message: 'Something went wrong' });
       });
   });
 };
@@ -30,7 +30,9 @@ const isUserExist = async () => {
 
         resolve(true);
       })
-      .catch((error) => reject(error));
+      .catch((error) =>
+        reject({ errorStack: error, message: 'Something went wrong' }),
+      );
   });
 };
 

@@ -9,7 +9,7 @@ import {
 } from 'components';
 import { useCategories } from 'hooks';
 import { EmptyCategories } from 'assets';
-import { handleAddCategory } from 'utils';
+import { handleGoToAddCategory } from 'utils';
 
 const Categories = () => {
   const categories = useCategories();
@@ -23,8 +23,17 @@ const Categories = () => {
       subHeading=" Add a temporary category in here and make a call"
       showButton={true}
       ctaText="Add your first category"
-      ctaOnClick={handleAddCategory}
+      ctaOnClick={handleGoToAddCategory}
     />
+  );
+
+  const addCategoryFloatingAction = categories.length > 0 && (
+    <div className="categories__container__action">
+      <FloatingActionButton
+        onClick={handleGoToAddCategory}
+        IconName={Icons.HIIcon.HiPlus}
+      />
+    </div>
   );
 
   return (
@@ -34,12 +43,7 @@ const Categories = () => {
         <BottomNavbar />
         <Spacer block="1" />
         <div className="categories__container__content">{emptyPageState}</div>
-        <div className="categories__container__action">
-          <FloatingActionButton
-            onClick={handleAddCategory}
-            IconName={Icons.HIIcon.HiPlus}
-          />
-        </div>
+        {addCategoryFloatingAction}
       </div>
     </main>
   );

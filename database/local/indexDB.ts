@@ -1,11 +1,11 @@
 // db.ts
 import Dexie, { Table } from 'dexie';
-import { Contact, Category, User } from 'database';
+import { AddContactModel, AddCategoryModel, AddUserModel } from 'database';
 
 export class MySubClassedDexie extends Dexie {
-  contacts!: Table<Contact>;
-  categories!: Table<Category>;
-  users!: Table<User>;
+  contacts!: Table<AddContactModel>;
+  categories!: Table<AddCategoryModel>;
+  users!: Table<AddUserModel>;
 
   constructor() {
     super('triflerDb');

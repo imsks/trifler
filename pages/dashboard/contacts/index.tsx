@@ -9,7 +9,7 @@ import {
 } from 'components';
 import { useContacts } from 'hooks';
 import { EmptyContacts } from 'assets';
-import { handleAddContact } from 'utils';
+import { handleGoToAddContact } from 'utils';
 
 const Contacts = () => {
   const contacts = useContacts();
@@ -23,8 +23,17 @@ const Contacts = () => {
       subHeading=" Add a temporary contact in here and make a call"
       showButton={true}
       ctaText="Add your first contact"
-      ctaOnClick={handleAddContact}
+      ctaOnClick={handleGoToAddContact}
     />
+  );
+
+  const addContactFloatingAction = contacts.length > 0 && (
+    <div className="contacts__container__action">
+      <FloatingActionButton
+        onClick={handleGoToAddContact}
+        IconName={Icons.HIIcon.HiPlus}
+      />
+    </div>
   );
 
   return (
@@ -34,12 +43,7 @@ const Contacts = () => {
         <BottomNavbar />
         <Spacer block="1" />
         <div className="contacts__container__content">{emptyPageState}</div>
-        <div className="contacts__container__action">
-          <FloatingActionButton
-            onClick={handleAddContact}
-            IconName={Icons.HIIcon.HiPlus}
-          />
-        </div>
+        {addContactFloatingAction}
       </div>
     </main>
   );

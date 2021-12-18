@@ -1,4 +1,4 @@
-.navbar {
+.additemnavbar {
   &__container {
     display: flex;
     justify-content: space-between;
@@ -16,10 +16,18 @@
       width: 10rem;
     }
 
-    &__actions {
-      &__button {
-        &-primary {
-        }
+    &__title {
+      font-weight: 700;
+      color: $color-primary;
+    }
+
+    &__action {
+      padding: 1rem 1.5rem;
+      background-color: $color-primary;
+
+      &__icon {
+        font-size: 2rem;
+        color: $color-white;
       }
     }
   }

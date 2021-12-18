@@ -36,12 +36,12 @@ const IndexPage = () => {
                   <Button
                     text="Use App"
                     className="btn-primary btn-md landing__container__hero__container__content__actions-primary"
-                    onclick={handleUseApp}
+                    onClick={handleUseApp}
                   />
                   <Button
                     text="Know more"
                     className="btn-secondary btn-md landing__container__hero__container__content__actions-secondary"
-                    onclick={handleKnowMore}
+                    onClick={handleKnowMore}
                   />
                 </div>
               </div>
