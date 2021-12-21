@@ -11,6 +11,8 @@ import { AboutProductItem } from 'components/Page/Landing';
 import * as Icons from 'components/Global/Icons';
 import IconContainer from 'components/Containers/Icon';
 import EmptyStateContainer from 'components/Layouts/Section/EmptyStateContainer';
+import PageHeaderText from 'components/Layouts/Section/PageHeaderText';
+import CategoryCard from 'components/Layouts/Cards/CategoryCard';
 
 export {
   Navbar,
@@ -28,4 +30,6 @@ export {
   AddItemNavbar,
   InputField,
   TextAreaField,
+  PageHeaderText,
+  CategoryCard,
 };

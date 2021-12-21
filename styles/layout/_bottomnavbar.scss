@@ -2,16 +2,16 @@
   &__container {
     overflow: hidden;
     position: fixed;
-    bottom: 3rem;
-    width: 100%;
+    left: 5rem;
+    top: 10rem;
 
     @include respond(phone) {
       bottom: 0;
     }
 
     &__content {
-      padding: 0.5rem;
-      width: 30rem;
+      padding: 2rem 0;
+      width: 8rem;
       margin: auto;
       background-color: $color-border;
       border-radius: 10px;
@@ -26,16 +26,18 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-direction: column;
         padding: 0 0.5rem;
 
         @include respond(phone) {
           justify-content: space-around;
+          flex-direction: row;
         }
 
         &__item {
-          font-size: 3rem;
+          font-size: 2.5rem;
           color: $color-grey;
-          padding: 0.8rem 1.6rem;
+          padding: 1rem 1.5rem;
           cursor: pointer;
           border-radius: 10px;
 
@@ -53,6 +55,12 @@
           &--active {
             background-color: $color-primary;
             color: $color-white;
+          }
+        }
+
+        &__icon {
+          &:not(:first-child) {
+            margin: 1rem 0 0 0;
           }
         }
       }

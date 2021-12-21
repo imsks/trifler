@@ -1,15 +1,16 @@
 import Router from 'next/router';
+import { pageRoutes } from 'utils';
 
 const handleGoDashboard = () => {
-  Router.push('/dashboard');
+  Router.push(pageRoutes.dashboard);
 };
 
 const handleGoContacts = () => {
-  Router.push('/dashboard/contacts');
+  Router.push(pageRoutes.absoluteUrls.contacts);
 };
 
 const handleGoCategory = () => {
-  Router.push('/dashboard/categories');
+  Router.push(pageRoutes.absoluteUrls.categories);
 };
 
 export { handleGoDashboard, handleGoContacts, handleGoCategory };

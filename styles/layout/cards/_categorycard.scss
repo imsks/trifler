@@ -1,0 +1,32 @@
+.categorycard {
+  padding: 1.5rem 2rem;
+  border: 2px solid $color-grey-light;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: $color-grey-light;
+    cursor: pointer;
+    transform: scale(0.98);
+    transition: 0.3s all;
+  }
+
+  &__text {
+    &__heading {
+      color: $color-black;
+      font-weight: 600;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    &__subheading {
+      color: $color-grey;
+    }
+  }
+
+  &__footer {
+    &__text {
+      color: $color-primary;
+    }
+  }
+}

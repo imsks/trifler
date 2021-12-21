@@ -7,4 +7,6 @@ export * from 'interfaces/components/layouts/AddItemNavbar';
 export * from 'interfaces/components/page/Landing';
 export * from 'interfaces/database/modules';
 export * from 'interfaces/containers/icon';
-export * from 'interfaces/containers/emptycontainer';
+export * from 'interfaces/components/layouts/section/emptycontainer';
+export * from 'interfaces/components/layouts/section/pageheadertext';
+export * from 'interfaces/components/layouts/cards/CategoryCard';
