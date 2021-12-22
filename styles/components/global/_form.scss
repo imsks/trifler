@@ -60,6 +60,43 @@
       }
     }
 
+    &__select {
+      margin-top: 0.8rem;
+      background-color: $color-white;
+      padding: 1rem 2rem;
+      border: 2px solid $color-border;
+      outline: none;
+      width: 100%;
+      border-radius: 5px;
+      min-height: 5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: $color-black-light;
+      font-family: $font-family;
+      transition: 0.3s all;
+
+      &__option {
+        font-size: 1.5rem;
+        padding: 8px 16px;
+        border: 1px solid transparent;
+        border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+        cursor: pointer;
+      }
+
+      &__emptytext {
+        margin-top: 0.8rem;
+        color: $color-black;
+      }
+
+      @include respond(phone) {
+        padding: 1.5rem 2rem;
+      }
+
+      &:focus {
+        border: 2px solid $color-primary-light;
+      }
+    }
+
     &__error {
       margin-top: 1rem;
       color: $color-danger !important;

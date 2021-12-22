@@ -14,7 +14,7 @@ import { EmptyCategories } from 'assets';
 import { handleGoToAddCategory, handleGoToCategoryDetails } from 'utils';
 
 const Categories = () => {
-  const categories = useCategories();
+  const categories = useCategories({});
 
   const emptyPageState = categories.length === 0 && (
     <EmptyStateContainer

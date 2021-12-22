@@ -1,6 +1,10 @@
 import React from 'react';
 import { Spacer } from 'components';
-import { InputFieldProps, TextAreaProps } from 'interfaces';
+import {
+  InputFieldProps,
+  SelectInputFieldProps,
+  TextAreaProps,
+} from 'interfaces';
 
 const InputField = ({
   type,
@@ -8,12 +12,16 @@ const InputField = ({
   onChange,
   required = false,
   showLabel = false,
+  autoFocus = false,
 }: InputFieldProps) => {
   return (
     <>
       <div className="form__container__input">
         {showLabel && (
-          <label className="form__container__input__label">{placeholder}</label>
+          <label className="form__container__input__label">
+            {placeholder}
+            {required && <sup>*</sup>}
+          </label>
         )}
         <input
           className="form__container__input__container"
@@ -21,6 +29,7 @@ const InputField = ({
           placeholder={!showLabel && placeholder}
           onChange={onChange}
           required={required}
+          autoFocus={autoFocus}
         />
       </div>
       <Spacer block="7" />
@@ -39,7 +48,10 @@ const TextAreaField = ({
     <>
       <div className="form__container__input">
         {showLabel && (
-          <label className="form__container__input__label">{placeholder}</label>
+          <label className="form__container__input__label">
+            {placeholder}
+            {required && <sup>*</sup>}
+          </label>
         )}
         <textarea
           className="form__container__input__container"
@@ -54,4 +66,44 @@ const TextAreaField = ({
   );
 };
 
-export { InputField, TextAreaField };
+const SelectInputField = ({
+  showLabel,
+  placeholder,
+  selectOptions,
+  noOptionsText,
+  onChange,
+}: SelectInputFieldProps) => {
+  return (
+    <>
+      <div className="form__container__input">
+        {showLabel && (
+          <label className="form__container__input__label">{placeholder}</label>
+        )}
+        {selectOptions.length > 0 ? (
+          <select className="form__container__select" onChange={onChange}>
+            {selectOptions.map((option, index) => {
+              const { label, value } = option;
+              return (
+                <option
+                  value={value}
+                  className="form__container__select__option"
+                  key={index}
+                  defaultChecked={index === 0}
+                >
+                  {label}
+                </option>
+              );
+            })}
+          </select>
+        ) : (
+          <p className="form__container__select__emptytext pre-text">
+            {noOptionsText}
+          </p>
+        )}
+      </div>
+      <Spacer block="7" />
+    </>
+  );
+};
+
+export { InputField, TextAreaField, SelectInputField };

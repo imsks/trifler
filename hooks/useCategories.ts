@@ -1,12 +1,22 @@
 import { useEffect, useState } from 'react';
 import { getAllCategories } from 'database';
-import { Category } from 'interfaces';
+import { Category, ShowCategory } from 'interfaces';
 
-const useCategories = () => {
-  const [Categories, setCategories] = useState<Category[]>([]);
+const useCategories = ({ showCategory = false }) => {
+  const [Categories, setCategories] = useState<Category[] | ShowCategory[]>([]);
 
   useEffect(() => {
-    getAllCategories().then(setCategories);
+    getAllCategories().then((categories: Category[]) => {
+      if (!showCategory) setCategories(categories);
+      else {
+        const showCategoryData = categories.map((category) => {
+          const { id, name, description } = category;
+          return { id, name, description };
+        });
+
+        setCategories(showCategoryData);
+      }
+    });
   }, []);
 
   return Categories;

@@ -3,6 +3,7 @@ export interface Contact {
   name: string;
   contactNo: string;
   categoryId?: string;
+  categoryName?: string;
   addedon: Date;
   updatedOn: Date;
 }
@@ -14,4 +15,10 @@ export interface Category {
   contacts?: Contact[];
   addedon: Date;
   updatedOn: Date;
+}
+
+export interface ShowCategory {
+  id: string;
+  name: string;
+  description?: string;
 }

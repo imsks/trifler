@@ -5,7 +5,11 @@ import BottomNavbar from 'components/Layouts/BottomNavbar';
 import { Button, FloatingActionButton } from 'components/Global/Button';
 import Icon from 'components/Global/Icon';
 import Spacer from 'components/Global/Spacing';
-import { InputField, TextAreaField } from 'components/Global/Form';
+import {
+  InputField,
+  TextAreaField,
+  SelectInputField,
+} from 'components/Global/Form';
 import Loader from 'components/Global/Loader';
 import { AboutProductItem } from 'components/Page/Landing';
 import * as Icons from 'components/Global/Icons';
@@ -32,4 +36,5 @@ export {
   TextAreaField,
   PageHeaderText,
   CategoryCard,
+  SelectInputField,
 };

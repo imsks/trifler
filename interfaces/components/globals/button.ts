@@ -7,13 +7,13 @@ export interface ButtonProps {
 }
 
 export interface IconButtonProps {
-  onClick: () => void;
+  onClick: React.MouseEventHandler<HTMLElement>;
   IconName: IconType;
   buttonClassname?: string;
   iconClassname?: string;
 }
 
 export interface FloatingActionButtonProps {
-  onClick: () => void;
+  onClick: React.MouseEventHandler<HTMLElement>;
   IconName: IconType;
 }
