@@ -17,20 +17,26 @@ const getAllContacts = () => {
 };
 
 // Add A Contact
-const addAContact = ({ name, contactNo, categoryId = null }) => {
+const addAContact = ({
+  name,
+  contactNo,
+  categoryId = null,
+  categoryName = null,
+}) => {
   return new Promise((resolve, reject) => {
     const contact: AddContactModel = {
       id: getRanddomID(),
       name,
       contactNo,
       categoryId,
+      categoryName,
       addedon: new Date(Date.now()),
     };
 
     indexDB.contacts
       .add(contact)
-      .then(() => {
-        resolve(true);
+      .then((value) => {
+        resolve(value);
       })
       .catch((error) => {
         reject({ errorStack: error, message: 'Something went wrong' });

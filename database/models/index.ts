@@ -3,6 +3,7 @@ export interface AddContactModel {
   name: string;
   contactNo: string;
   categoryId?: string;
+  categoryName?: string;
   addedon: Date;
   updatedOn?: Date;
 }

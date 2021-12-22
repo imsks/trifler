@@ -9,17 +9,21 @@ import { addACategory, addAContact } from 'database';
 import { useCategories } from 'hooks';
 import { SelectOptionsType, ShowCategory } from 'interfaces';
 import Router from 'next/router';
-import { useEffect, useState } from 'react';
-import { getRanddomID, pageRoutes } from 'utils';
+import { useState } from 'react';
+import { pageRoutes } from 'utils';
 
 const AddContact = () => {
   const [name, setName] = useState<string>(null);
   const [contactNo, setContactNo] = useState<string>(null);
-  const [category, setCategory] = useState<SelectOptionsType>(null);
+  const [category, setCategory] = useState<SelectOptionsType>({
+    label: null,
+    value: null,
+  });
   const [categoryName, setCategoryName] = useState<string>(null);
   const [formError, setFormError] = useState(null);
+  const [addContactClicked, setAddContactClicked] = useState<boolean>(false);
 
-  const handleAddContact = (event: React.MouseEvent<HTMLElement>) => {
+  const handleAddContact = async (event: React.MouseEvent<HTMLElement>) => {
     event.preventDefault();
     setFormError(null);
 
@@ -35,47 +39,31 @@ const AddContact = () => {
 
     event.preventDefault();
     setFormError(null);
+    setAddContactClicked(true);
 
     // 1. If category is provided
-    let categoryData = {};
+    let categoryId = null;
+    let newCategoryName = null;
     // 1. Category doesn't exist, Add category to DB
     if (categoryName) {
-      const categoryId = getRanddomID();
-
-      categoryData = {
-        categoryId,
-        categoryName,
-      };
-
-      addACategory({ name, description })
-        .then(() => {
-          Router.push(pageRoutes.absoluteUrls.categories);
-        })
-        .catch((error) => {
-          setFormError(error.message);
-        });
+      categoryId = await addACategory({ name: categoryName });
+      newCategoryName = categoryName;
     }
 
     // 2. Category exists already
     else {
-      if (!category.value) {
-        categoryData = { categoryName: null, categoryId: null };
-      } else
-        categoryData = {
-          categoryId: category.value,
-          categoryName: category.label,
-        };
+      categoryId = category.value;
+      newCategoryName = category.label;
     }
 
-    console.log(categoryData);
-
-    // addAContact({ name, contactNo })
-    //   .then(() => {
-    //     Router.push(pageRoutes.absoluteUrls.contacts);
-    //   })
-    //   .catch((error) => {
-    //     setFormError(error.message);
-    //   });
+    addAContact({ name, contactNo, categoryId, categoryName: newCategoryName })
+      .then(() => {
+        Router.push(pageRoutes.absoluteUrls.contacts);
+      })
+      .catch((error) => {
+        setFormError(error.message);
+        setAddContactClicked(false);
+      });
   };
 
   const handleSelectCategory = (
@@ -151,7 +139,10 @@ const AddContact = () => {
               <InputField
                 type="text"
                 placeholder="New category name ie. Friends, Office etc."
-                onChange={(event) => setCategoryName(event.target.value)}
+                onChange={(event) => {
+                  setCategoryName(event.target.value);
+                  setCategory({ label: null, value: null });
+                }}
                 required={false}
                 showLabel={true}
               />
@@ -159,7 +150,7 @@ const AddContact = () => {
               <Spacer block="7" />
               <div className="addcontact__container__content__form__container__action">
                 <Button
-                  text="Add Contact"
+                  text={!addContactClicked ? 'Add Contact' : 'Adding...'}
                   className="btn-primary btn-md emptystate__container__actions-primary"
                   onClick={handleAddContact}
                 />

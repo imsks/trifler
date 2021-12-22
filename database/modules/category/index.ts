@@ -17,7 +17,7 @@ const getAllCategories = () => {
 };
 
 // Add A Category
-const addACategory = ({ name, description }) => {
+const addACategory = ({ name, description = '' }) => {
   return new Promise((resolve, reject) => {
     const category: AddCategoryModel = {
       id: getRanddomID(),
@@ -28,8 +28,8 @@ const addACategory = ({ name, description }) => {
 
     indexDB.categories
       .add(category)
-      .then(() => {
-        resolve(true);
+      .then((value) => {
+        resolve(value);
       })
       .catch((error) => {
         reject({ errorStack: error, message: 'Something went wrong' });
