@@ -17,8 +17,21 @@ export interface Category {
   updatedOn: Date;
 }
 
+export interface ShowContact {
+  id: string;
+  name: string;
+  categoryName?: string;
+}
+
 export interface ShowCategory {
   id: string;
   name: string;
   description?: string;
+}
+
+export interface CategoryCard {
+  id: string;
+  name: string;
+  description?: string;
+  contacts?: Contact[];
 }

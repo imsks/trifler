@@ -58,6 +58,7 @@ const AddContact = () => {
 
     addAContact({ name, contactNo, categoryId, categoryName: newCategoryName })
       .then(() => {
+        setAddContactClicked(false);
         Router.push(pageRoutes.absoluteUrls.contacts);
       })
       .catch((error) => {
@@ -87,7 +88,7 @@ const AddContact = () => {
   const selectOptions: Array<SelectOptionsType> = [
     mappedCategories.length > 0 && { label: 'Select a category', value: null },
     ...mappedCategories,
-  ];
+  ].filter((option) => option);
 
   return (
     <main className="addcontact">

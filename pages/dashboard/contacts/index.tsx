@@ -6,15 +6,14 @@ import {
   FloatingActionButton,
   Spacer,
   EmptyStateContainer,
+  PageHeaderText,
 } from 'components';
 import { useContacts } from 'hooks';
 import { EmptyContacts } from 'assets';
 import { handleGoToAddContact } from 'utils';
 
 const Contacts = () => {
-  const contacts = useContacts();
-
-  // console.log(contacts);
+  const contacts = [useContacts()];
 
   const emptyPageState = contacts.length === 0 && (
     <EmptyStateContainer
@@ -36,13 +35,27 @@ const Contacts = () => {
     </div>
   );
 
+  const pageHeader = contacts.length > 0 && (
+    <>
+      <PageHeaderText
+        title="All contacts"
+        text="Take a look at all the contacts. You can create as many as you
+              want"
+      />
+      <Spacer block="4" />
+    </>
+  );
+
   return (
     <main className="contacts">
       <div className="contacts__container">
         <Navbar />
         <BottomNavbar />
         <Spacer block="1" />
-        <div className="contacts__container__content">{emptyPageState}</div>
+        <div className="contacts__container__content">
+          {emptyPageState}
+          {pageHeader}
+        </div>
         {addContactFloatingAction}
       </div>
     </main>

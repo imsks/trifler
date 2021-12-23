@@ -1,5 +1,5 @@
-import { AddCategoryModel, indexDB } from 'database';
-import { Category } from 'interfaces';
+import { AddCategoryModel, getContactsByCategoryID, indexDB } from 'database';
+import { Category, CategoryCard } from 'interfaces';
 import { getRanddomID } from 'utils';
 
 // Get all categories
@@ -37,4 +37,22 @@ const addACategory = ({ name, description = '' }) => {
   });
 };
 
-export { getAllCategories, addACategory };
+// Get all contacts with categories
+const getAllContactsWithCategories = async (categories: Category[]) => {
+  return Promise.all(
+    categories.map(async (category) => {
+      const { id, name, description } = category;
+
+      const contacts = await getContactsByCategoryID(category.id);
+
+      return {
+        id,
+        name,
+        description,
+        contacts,
+      } as CategoryCard;
+    }),
+  );
+};
+
+export { getAllCategories, addACategory, getAllContactsWithCategories };

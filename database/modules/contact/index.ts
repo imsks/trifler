@@ -44,4 +44,22 @@ const addAContact = ({
   });
 };
 
-export { getAllContacts, addAContact };
+// Get all contacts by category ID
+const getContactsByCategoryID = (
+  categoryId: string,
+): Promise<AddContactModel[]> => {
+  return new Promise((resolve, reject) => {
+    indexDB.contacts
+      .where('categoryId')
+      .equals(categoryId)
+      .toArray()
+      .then((value) => {
+        resolve(value);
+      })
+      .catch((error) =>
+        reject({ errorStack: error, message: 'Something went wrong' }),
+      );
+  });
+};
+
+export { getAllContacts, addAContact, getContactsByCategoryID };
