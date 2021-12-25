@@ -7,13 +7,14 @@ import {
   Spacer,
   EmptyStateContainer,
   PageHeaderText,
+  ContactCard,
 } from 'components';
 import { useContacts } from 'hooks';
 import { EmptyContacts } from 'assets';
-import { handleGoToAddContact } from 'utils';
+import { handleGoToAddContact, handleGoToContactDetails } from 'utils';
 
 const Contacts = () => {
-  const contacts = [useContacts()];
+  const contacts = useContacts();
 
   const emptyPageState = contacts.length === 0 && (
     <EmptyStateContainer
@@ -39,7 +40,7 @@ const Contacts = () => {
     <>
       <PageHeaderText
         title="All contacts"
-        text="Take a look at all the contacts. You can create as many as you
+        text="Here you'll find all contacts you added. You can create as many as you
               want"
       />
       <Spacer block="4" />
@@ -51,10 +52,24 @@ const Contacts = () => {
       <div className="contacts__container">
         <Navbar />
         <BottomNavbar />
-        <Spacer block="1" />
+        <Spacer block="4" />
         <div className="contacts__container__content">
           {emptyPageState}
           {pageHeader}
+          <div className="contacts__container__content__contacts">
+            {contacts.map((contact, index) => {
+              const { id, name, categoryName, contactNo } = contact;
+              return (
+                <ContactCard
+                  key={index}
+                  name={name}
+                  categoryName={categoryName}
+                  contactNo={contactNo}
+                  onClick={() => handleGoToContactDetails(id)}
+                />
+              );
+            })}
+          </div>
         </div>
         {addContactFloatingAction}
       </div>

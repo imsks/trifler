@@ -5,4 +5,12 @@ const handleGoToCategoryDetails = (categoryId: string) => {
   Router.push(pageRoutes.absoluteUrls.categories + `/${categoryId}`);
 };
 
-export { handleGoToCategoryDetails };
+const handleGoToContactDetails = (contactId: string) => {
+  Router.push(pageRoutes.absoluteUrls.contacts + `/${contactId}`);
+};
+
+const handleMakeCall = (contactNo: string) => {
+  Router.push(`tel:${contactNo}`);
+};
+
+export { handleGoToCategoryDetails, handleMakeCall, handleGoToContactDetails };

@@ -11,7 +11,11 @@ import {
 } from 'utils/components/layout/emptycontainer';
 import { getRanddomID } from 'utils/functions';
 import pageRoutes from 'utils/page/routes';
-import { handleGoToCategoryDetails } from 'utils/components/layout/cards';
+import {
+  handleGoToCategoryDetails,
+  handleMakeCall,
+  handleGoToContactDetails,
+} from 'utils/components/layout/cards';
 
 export {
   handleUseApp,
@@ -25,4 +29,6 @@ export {
   handleGoToAddContact,
   handleGoBack,
   handleGoToCategoryDetails,
+  handleMakeCall,
+  handleGoToContactDetails,
 };

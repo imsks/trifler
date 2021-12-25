@@ -57,7 +57,7 @@ const Categories = () => {
         <div className="categories__container__content">
           {pageHeader}
           {emptyPageState}
-          <div className="categories__container__content__containers">
+          <div className="categories__container__content__section">
             {categories.map((category: Category) => {
               const { id, name, description, contacts = [] } = category;
 

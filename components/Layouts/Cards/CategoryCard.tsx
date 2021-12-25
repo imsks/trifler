@@ -2,14 +2,13 @@ import { Spacer } from 'components';
 import { CategoryCardProps } from 'interfaces';
 
 const CategoryCard = ({
-  key,
   name,
   description,
   noOfContacts,
   onClick,
 }: CategoryCardProps) => {
   return (
-    <div className="categorycard" key={key} onClick={onClick}>
+    <div className="categorycard" onClick={onClick}>
       <div className="categorycard__text">
         <h5 className="categorycard__text__heading subtitle">{name}</h5>
         <Spacer block="8" />

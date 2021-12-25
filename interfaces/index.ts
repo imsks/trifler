@@ -9,4 +9,4 @@ export * from 'interfaces/database/modules';
 export * from 'interfaces/containers/icon';
 export * from 'interfaces/components/layouts/section/emptycontainer';
 export * from 'interfaces/components/layouts/section/pageheadertext';
-export * from 'interfaces/components/layouts/cards/CategoryCard';
+export * from 'interfaces/components/layouts/cards';
