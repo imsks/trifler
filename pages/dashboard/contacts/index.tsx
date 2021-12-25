@@ -52,7 +52,7 @@ const Contacts = () => {
       <div className="contacts__container">
         <Navbar />
         <BottomNavbar />
-        <Spacer block="4" />
+        <Spacer block="5" />
         <div className="contacts__container__content">
           {emptyPageState}
           {pageHeader}

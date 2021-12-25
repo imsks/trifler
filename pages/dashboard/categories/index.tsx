@@ -53,7 +53,7 @@ const Categories = () => {
       <div className="categories__container">
         <Navbar />
         <BottomNavbar />
-        <Spacer block="4" />
+        <Spacer block="5" />
         <div className="categories__container__content">
           {pageHeader}
           {emptyPageState}
