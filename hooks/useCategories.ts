@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getAllCategories, getAllContactsWithCategories } from 'database';
+import { getAllCategories, getAllCategoriesWithContacts } from 'database';
 import { Category, CategoryCard, ShowCategory } from 'interfaces';
 
 const useCategories = ({ showCategory = false, showContacts = false }) => {
@@ -17,7 +17,7 @@ const useCategories = ({ showCategory = false, showContacts = false }) => {
         setCategories(showCategoryData);
       } else if (showContacts) {
         const categoriesWithContacts: CategoryCard[] =
-          await getAllContactsWithCategories(categories);
+          await getAllCategoriesWithContacts(categories);
 
         setCategories(categoriesWithContacts);
       } else {

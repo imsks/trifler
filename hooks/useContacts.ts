@@ -1,12 +1,21 @@
 import { useEffect, useState } from 'react';
-import { getAllContacts } from 'database';
-import { Contact } from 'interfaces';
+import { getAllContacts, getAllContactsWithCategories } from 'database';
+import { Contact, ContactCard } from 'interfaces';
 
-const useContacts = () => {
-  const [contacts, setContacts] = useState<Contact[]>([]);
+const useContacts = ({ showcategory = false }) => {
+  const [contacts, setContacts] = useState<Contact[] | ContactCard[]>([]);
 
   useEffect(() => {
-    getAllContacts().then(setContacts);
+    getAllContacts().then(async (contactsData) => {
+      if (showcategory) {
+        const contactsWithCategories: ContactCard[] =
+          await getAllContactsWithCategories(contactsData);
+
+        setContacts(contactsWithCategories);
+      } else {
+        setContacts(contactsData);
+      }
+    });
   }, []);
 
   return contacts;

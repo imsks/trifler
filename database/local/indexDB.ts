@@ -10,8 +10,7 @@ export class MySubClassedDexie extends Dexie {
   constructor() {
     super('triflerDb');
     this.version(1).stores({
-      contacts:
-        'id, name, contactNo, categoryId, categoryName, addedon, updatedOn',
+      contacts: 'id, name, contactNo, categoryId, addedon, updatedOn',
       categories: 'id, name, description, addedon, updatedOn',
       users: 'id, joinedOn, isStartedUsingApp',
     });

@@ -37,8 +37,8 @@ const addACategory = ({ name, description = '' }) => {
   });
 };
 
-// Get all contacts with categories
-const getAllContactsWithCategories = async (categories: Category[]) => {
+// Get all categories with contacts
+const getAllCategoriesWithContacts = async (categories: Category[]) => {
   return Promise.all(
     categories.map(async (category) => {
       const { id, name, description } = category;
@@ -55,4 +55,26 @@ const getAllContactsWithCategories = async (categories: Category[]) => {
   );
 };
 
-export { getAllCategories, addACategory, getAllContactsWithCategories };
+const getCategoryNameByCategoryId = (
+  categoryId: string,
+): Promise<AddCategoryModel> => {
+  return new Promise((resolve, reject) => {
+    indexDB.categories
+      .where('id')
+      .equals(categoryId)
+      .first()
+      .then((value) => {
+        resolve(value);
+      })
+      .catch((error) =>
+        reject({ errorStack: error, message: 'Something went wrong' }),
+      );
+  });
+};
+
+export {
+  getAllCategories,
+  addACategory,
+  getAllCategoriesWithContacts,
+  getCategoryNameByCategoryId,
+};

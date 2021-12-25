@@ -43,20 +43,17 @@ const AddContact = () => {
 
     // 1. If category is provided
     let categoryId = null;
-    let newCategoryName = null;
     // 1. Category doesn't exist, Add category to DB
     if (categoryName) {
       categoryId = await addACategory({ name: categoryName });
-      newCategoryName = categoryName;
     }
 
     // 2. Category exists already
     else {
       categoryId = category.value;
-      newCategoryName = category.label;
     }
 
-    addAContact({ name, contactNo, categoryId, categoryName: newCategoryName })
+    addAContact({ name, contactNo, categoryId })
       .then(() => {
         setAddContactClicked(false);
         Router.push(pageRoutes.absoluteUrls.contacts);

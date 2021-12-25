@@ -14,7 +14,8 @@ import { EmptyContacts } from 'assets';
 import { handleGoToAddContact, handleGoToContactDetails } from 'utils';
 
 const Contacts = () => {
-  const contacts = useContacts();
+  const contacts = useContacts({ showcategory: true });
+  console.log(contacts);
 
   const emptyPageState = contacts.length === 0 && (
     <EmptyStateContainer

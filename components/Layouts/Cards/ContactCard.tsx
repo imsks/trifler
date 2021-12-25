@@ -12,10 +12,16 @@ const ContactCard = ({
     <div className="contactcard" onClick={onClick}>
       <div className="contactcard__text">
         <h3 className="contactcard__text__title subtitle">{name}</h3>
-        <Spacer block="8" />
-        <div className="contactcard__category">
-          <p className="contactcard__category__text pre-text">{categoryName}</p>
-        </div>
+        {categoryName && (
+          <>
+            <Spacer block="8" />
+            <div className="contactcard__category">
+              <p className="contactcard__category__text pre-text">
+                {categoryName}
+              </p>
+            </div>
+          </>
+        )}
       </div>
       <div className="contactcard__action">
         <IconContainer

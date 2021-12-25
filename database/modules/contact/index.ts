@@ -1,9 +1,13 @@
-import { AddContactModel, indexDB } from 'database';
-import { Contact } from 'interfaces';
+import {
+  AddContactModel,
+  getCategoryNameByCategoryId,
+  indexDB,
+} from 'database';
+import { Contact, ContactCard } from 'interfaces';
 import { getRanddomID } from 'utils';
 
 // Get all contacts
-const getAllContacts = () => {
+const getAllContacts = (): Promise<Contact[]> => {
   return new Promise((resolve, reject) => {
     indexDB.contacts
       .toArray()
@@ -17,19 +21,13 @@ const getAllContacts = () => {
 };
 
 // Add A Contact
-const addAContact = ({
-  name,
-  contactNo,
-  categoryId = null,
-  categoryName = null,
-}) => {
+const addAContact = ({ name, contactNo, categoryId = null }) => {
   return new Promise((resolve, reject) => {
     const contact: AddContactModel = {
       id: getRanddomID(),
       name,
       contactNo,
       categoryId,
-      categoryName,
       addedon: new Date(Date.now()),
     };
 
@@ -62,4 +60,36 @@ const getContactsByCategoryID = (
   });
 };
 
-export { getAllContacts, addAContact, getContactsByCategoryID };
+// Get all contacts with categories
+const getAllContactsWithCategories = async (contacts: Contact[]) => {
+  return Promise.all(
+    contacts.map(async (contact) => {
+      const { id, name, categoryId, contactNo } = contact;
+
+      // If category ID exists
+      if (categoryId) {
+        const category = await getCategoryNameByCategoryId(categoryId);
+
+        return {
+          id,
+          name,
+          categoryName: category.name,
+          contactNo,
+        } as ContactCard;
+      }
+
+      return {
+        id,
+        name,
+        contactNo,
+      } as ContactCard;
+    }),
+  );
+};
+
+export {
+  getAllContacts,
+  addAContact,
+  getContactsByCategoryID,
+  getAllContactsWithCategories,
+};
