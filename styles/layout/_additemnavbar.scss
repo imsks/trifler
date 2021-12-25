@@ -26,8 +26,10 @@
       background-color: $color-primary;
 
       &__icon {
-        font-size: 2rem;
+        font-size: 2.4rem;
         color: $color-white;
+        transform: rotate(45deg);
+        display: flex;
       }
     }
   }

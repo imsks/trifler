@@ -21,7 +21,7 @@ const AddItemNavbar = ({ title }: AddItemNavbarProps) => {
           <h3 className="additemnavbar__container__title body">{title}</h3>
         )}
         <IconButton
-          IconName={Icons.HIIcon.HiArrowLeft}
+          IconName={Icons.HIIcon.HiPlus}
           onClick={handleGoBack}
           buttonClassname="additemnavbar__container__action"
           iconClassname="additemnavbar__container__action__icon"
