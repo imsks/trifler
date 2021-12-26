@@ -3,6 +3,7 @@ export interface ContactCardProps {
   categoryName?: string;
   contactNo: string;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  showDelete?: boolean;
 }
 
 export interface CategoryCardProps {

@@ -16,8 +16,9 @@ import * as Icons from 'components/Global/Icons';
 import IconContainer from 'components/Containers/Icon';
 import EmptyStateContainer from 'components/Layouts/Section/EmptyStateContainer';
 import PageHeaderText from 'components/Layouts/Section/PageHeaderText';
+import ContactsContainer from 'components/Layouts/Section/ContactsContainer';
 import CategoryCard from 'components/Layouts/Cards/CategoryCard';
-import ContactCard from 'components/Layouts/Cards/ContactCard';
+import ContactCardContainer from 'components/Layouts/Cards/ContactCard';
 
 export {
   Navbar,
@@ -38,5 +39,6 @@ export {
   PageHeaderText,
   CategoryCard,
   SelectInputField,
-  ContactCard,
+  ContactCardContainer,
+  ContactsContainer,
 };

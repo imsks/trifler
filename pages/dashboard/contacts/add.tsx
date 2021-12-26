@@ -13,13 +13,13 @@ import { useState } from 'react';
 import { pageRoutes } from 'utils';
 
 const AddContact = () => {
-  const [name, setName] = useState<string>(null);
-  const [contactNo, setContactNo] = useState<string>(null);
+  const [name, setName] = useState<string>('');
+  const [contactNo, setContactNo] = useState<string>('');
   const [category, setCategory] = useState<SelectOptionsType>({
     label: null,
     value: null,
   });
-  const [categoryName, setCategoryName] = useState<string>(null);
+  const [categoryName, setCategoryName] = useState<string>('');
   const [formError, setFormError] = useState(null);
   const [addContactClicked, setAddContactClicked] = useState<boolean>(false);
 
@@ -108,6 +108,7 @@ const AddContact = () => {
                 required={true}
                 showLabel={true}
                 autoFocus={true}
+                value={name}
               />
 
               <InputField
@@ -116,6 +117,7 @@ const AddContact = () => {
                 onChange={(event) => setContactNo(event.target.value)}
                 required={true}
                 showLabel={true}
+                value={contactNo}
               />
 
               {!categoryName && (
@@ -143,6 +145,7 @@ const AddContact = () => {
                 }}
                 required={false}
                 showLabel={true}
+                value={categoryName}
               />
 
               <Spacer block="7" />

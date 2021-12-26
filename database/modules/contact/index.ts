@@ -1,6 +1,6 @@
 import {
   AddContactModel,
-  getCategoryNameByCategoryId,
+  getCategoryDetailsByCategoryId,
   indexDB,
 } from 'database';
 import { Contact, ContactCard } from 'interfaces';
@@ -68,7 +68,7 @@ const getAllContactsWithCategories = async (contacts: Contact[]) => {
 
       // If category ID exists
       if (categoryId) {
-        const category = await getCategoryNameByCategoryId(categoryId);
+        const category = await getCategoryDetailsByCategoryId(categoryId);
 
         return {
           id,

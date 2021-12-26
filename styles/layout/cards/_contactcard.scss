@@ -7,13 +7,6 @@
   justify-content: space-between;
   max-width: 34rem;
 
-  &:hover {
-    background-color: $color-grey-light;
-    cursor: pointer;
-    transform: scale(0.98);
-    transition: 0.3s all;
-  }
-
   &__text {
     &__title {
       color: $color-black;
@@ -26,7 +19,7 @@
 
   &__category {
     border: 1px solid $color-primary;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem;
     border-radius: 20px;
     display: flex;
     align-items: center;
@@ -34,25 +27,36 @@
 
     &__text {
       color: $color-primary;
+      font-weight: 700;
+      font-size: 1.2rem;
     }
   }
 
   &__action {
+    display: flex;
+
     &__item {
-      background-color: $color-primary;
+      border:  1px solid $color-grey;
       padding: 1.2rem;
       border-radius: 5px;
       cursor: pointer;
       transition: 0.1s all;
 
       &:hover {
-        transform: scale(0.95);
+        background-color: $color-primary;
+        color: $color-white;
+        transition: 0.3s all;
+        transform: scale(0.98);
       }
     }
 
     &__icon {
-      font-size: 2.2rem;
-      color: $color-white;
+      font-size: 1.5rem;
+      color: $color-grey;
+
+      &:not(:first-child) {
+        margin-left: 0.5rem;
+      }
     }
   }
 }

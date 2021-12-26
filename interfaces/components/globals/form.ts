@@ -5,6 +5,7 @@ export type InputFieldProps = {
   required?: boolean;
   showLabel?: boolean;
   autoFocus?: boolean;
+  value?: string;
 };
 
 export type TextAreaProps = {
@@ -13,6 +14,7 @@ export type TextAreaProps = {
   required?: boolean;
   rows?: number;
   showLabel?: boolean;
+  value?: string;
 };
 
 export interface SelectInputFieldProps {

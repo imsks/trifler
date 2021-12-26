@@ -1,8 +1,33 @@
 .pageheadertext {
-  &__heading {
-  }
+  display: flex;
+  align-items: center;
 
   &__text {
-    color: $color-grey;
+    &__heading {
+      font-weight: 700;
+    }
+
+    &__body {
+      color: $color-grey;
+    }
+  }
+
+  &__actions {
+    margin-left: 4rem;
+
+    &__item {
+      padding: 0.5rem 1rem;
+      border: 1px solid $color-grey !important;
+
+      &:not(:first-child) {
+        margin-left: 1rem;
+      }
+
+      &__icon {
+        font-size: 1.8rem;
+        color: $color-grey;
+        display: flex;
+      }
+    }
   }
 }

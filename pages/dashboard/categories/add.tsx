@@ -11,8 +11,8 @@ import Router from 'next/router';
 import { pageRoutes } from 'utils';
 
 const AddCategory = () => {
-  const [name, setName] = useState(null);
-  const [description, setDescription] = useState(null);
+  const [name, setName] = useState<string>('');
+  const [description, setDescription] = useState<string>('');
   const [formError, setFormError] = useState(null);
 
   const handleAddCategory = (event: React.MouseEvent<HTMLElement>) => {
@@ -53,6 +53,7 @@ const AddCategory = () => {
                 onChange={(event) => setName(event.target.value)}
                 required={true}
                 showLabel={true}
+                value={name}
               />
 
               <TextAreaField
@@ -60,6 +61,7 @@ const AddCategory = () => {
                 onChange={(event) => setDescription(event.target.value)}
                 rows={5}
                 showLabel={true}
+                value={description}
               />
 
               <Spacer block="7" />

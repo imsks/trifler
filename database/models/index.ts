@@ -15,6 +15,12 @@ export interface AddCategoryModel {
   updatedOn?: Date;
 }
 
+export interface UpdateCategoryModel {
+  name: string;
+  description?: string;
+  updatedOn: Date;
+}
+
 export interface AddUserModel {
   id: string;
   joinedOn: Date;

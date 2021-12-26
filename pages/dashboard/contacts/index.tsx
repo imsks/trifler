@@ -7,11 +7,11 @@ import {
   Spacer,
   EmptyStateContainer,
   PageHeaderText,
-  ContactCard,
+  ContactsContainer,
 } from 'components';
 import { useContacts } from 'hooks';
 import { EmptyContacts } from 'assets';
-import { handleGoToAddContact, handleGoToContactDetails } from 'utils';
+import { handleGoToAddContact } from 'utils';
 
 const Contacts = () => {
   const contacts = useContacts({ showcategory: true });
@@ -47,6 +47,10 @@ const Contacts = () => {
     </>
   );
 
+  const contactsContainer = contacts.length > 0 && (
+    <ContactsContainer contacts={contacts} />
+  );
+
   return (
     <main className="contacts">
       <div className="contacts__container">
@@ -56,20 +60,7 @@ const Contacts = () => {
         <div className="contacts__container__content">
           {emptyPageState}
           {pageHeader}
-          <div className="contacts__container__content__contacts">
-            {contacts.map((contact, index) => {
-              const { id, name, categoryName, contactNo } = contact;
-              return (
-                <ContactCard
-                  key={index}
-                  name={name}
-                  categoryName={categoryName}
-                  contactNo={contactNo}
-                  onClick={() => handleGoToContactDetails(id)}
-                />
-              );
-            })}
-          </div>
+          {contactsContainer}
         </div>
         {addContactFloatingAction}
       </div>

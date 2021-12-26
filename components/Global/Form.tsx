@@ -13,6 +13,7 @@ const InputField = ({
   required = false,
   showLabel = false,
   autoFocus = false,
+  value = '',
 }: InputFieldProps) => {
   return (
     <>
@@ -30,6 +31,7 @@ const InputField = ({
           onChange={onChange}
           required={required}
           autoFocus={autoFocus}
+          value={value}
         />
       </div>
       <Spacer block="7" />
@@ -43,6 +45,7 @@ const TextAreaField = ({
   required = false,
   rows = 4,
   showLabel = false,
+  value = '',
 }: TextAreaProps) => {
   return (
     <>
@@ -59,6 +62,7 @@ const TextAreaField = ({
           onChange={onChange}
           required={required}
           rows={rows}
+          value={value}
         />
       </div>
       <Spacer block="7" />
