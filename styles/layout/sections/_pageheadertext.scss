@@ -1,6 +1,7 @@
 .pageheadertext {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   &__text {
     max-width: 80%;
