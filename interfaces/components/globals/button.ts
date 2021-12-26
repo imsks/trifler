@@ -11,6 +11,7 @@ export interface IconButtonProps {
   IconName: IconType;
   buttonClassname?: string;
   iconClassname?: string;
+  buttonText?: string;
 }
 
 export interface FloatingActionButtonProps {

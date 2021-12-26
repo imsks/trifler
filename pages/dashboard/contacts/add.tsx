@@ -43,12 +43,16 @@ const AddContact = () => {
 
     // 1. If category is provided
     let categoryId = null;
-    // 1. Category doesn't exist, Add category to DB
+
+    // 1A. Category doesn't exist, Add category to DB
     if (categoryName) {
-      categoryId = await addACategory({ name: categoryName });
+      categoryId = await addACategory({
+        name: categoryName,
+        description: null,
+      });
     }
 
-    // 2. Category exists already
+    // 1B. Category exists already
     else {
       categoryId = category.value;
     }

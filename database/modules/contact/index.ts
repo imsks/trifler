@@ -42,6 +42,36 @@ const addAContact = ({ name, contactNo, categoryId = null }) => {
   });
 };
 
+// Delete A Contact
+const deleteAContact = (id: string) => {
+  return new Promise((resolve, reject) => {
+    indexDB.contacts
+      .delete(id)
+      .then((value) => {
+        resolve(value);
+      })
+      .catch((error) => {
+        reject({ errorStack: error, message: 'Something went wrong' });
+      });
+  });
+};
+
+// Delete all contacts by category ID
+const deleteAllContactsByCategoryId = (categoryId: string) => {
+  return new Promise((resolve, reject) => {
+    indexDB.contacts
+      .where('categoryId')
+      .equals(categoryId)
+      .delete()
+      .then((value) => {
+        resolve(value);
+      })
+      .catch((error) =>
+        reject({ errorStack: error, message: 'Something went wrong' }),
+      );
+  });
+};
+
 // Get all contacts by category ID
 const getContactsByCategoryID = (
   categoryId: string,
@@ -90,6 +120,8 @@ const getAllContactsWithCategories = async (contacts: Contact[]) => {
 export {
   getAllContacts,
   addAContact,
+  deleteAContact,
   getContactsByCategoryID,
   getAllContactsWithCategories,
+  deleteAllContactsByCategoryId,
 };

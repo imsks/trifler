@@ -14,11 +14,13 @@ import Loader from 'components/Global/Loader';
 import { AboutProductItem } from 'components/Page/Landing';
 import * as Icons from 'components/Global/Icons';
 import IconContainer from 'components/Containers/Icon';
-import EmptyStateContainer from 'components/Layouts/Section/EmptyStateContainer';
+import EmptyStateContainer from 'components/Containers/EmptyStateContainer';
 import PageHeaderText from 'components/Layouts/Section/PageHeaderText';
-import ContactsContainer from 'components/Layouts/Section/ContactsContainer';
+import ContactsContainer from 'components/Containers/ContactsContainer';
 import CategoryCard from 'components/Layouts/Cards/CategoryCard';
 import ContactCardContainer from 'components/Layouts/Cards/ContactCard';
+import ConfirmContainer from 'components/Containers/ConfirmContainer';
+import CategoryForm from 'components/Containers/CategoryForm';
 
 export {
   Navbar,
@@ -41,4 +43,6 @@ export {
   SelectInputField,
   ContactCardContainer,
   ContactsContainer,
+  ConfirmContainer,
+  CategoryForm,
 };

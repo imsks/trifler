@@ -1,15 +1,10 @@
 import { ContactCardContainer } from 'components';
-import { ContactCard } from 'interfaces';
-import { handleGoToContactDetails } from 'utils';
-
-interface ContactsContainerProps {
-  contacts: ContactCard[];
-  showDelete?: boolean;
-}
+import { ContactsContainerProps } from 'interfaces';
 
 const ContactsContainer = ({
   contacts,
   showDelete,
+  onDeleteContact,
 }: ContactsContainerProps) => {
   return (
     <div className="contacts__container__content__contacts">
@@ -18,11 +13,12 @@ const ContactsContainer = ({
         return (
           <ContactCardContainer
             key={index}
+            id={id}
             name={name}
             categoryName={categoryName}
             contactNo={contactNo}
-            onClick={() => handleGoToContactDetails(id)}
             showDelete={showDelete}
+            onDelete={() => onDeleteContact(id)}
           />
         );
       })}

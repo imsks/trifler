@@ -1,13 +1,15 @@
 import { IconContainer, Icons, Spacer } from 'components';
 import { ContactCardProps } from 'interfaces';
 import { handleMakeCall } from 'utils';
+import { handleGoToContactDetails } from 'utils';
 
 const ContactCardContainer = ({
+  id,
   name,
   categoryName,
   contactNo,
-  onClick,
   showDelete,
+  onDelete,
 }: ContactCardProps) => {
   return (
     <div className="contactcard">
@@ -33,7 +35,7 @@ const ContactCardContainer = ({
           activeIconClassName={'contactcard__action__item--active'}
         />
         <IconContainer
-          onClick={onClick}
+          onClick={() => handleGoToContactDetails(id)}
           IconName={Icons.HIIcon.HiArrowRight}
           containerClassName="contactcard__action__icon"
           iconClassName="contactcard__action__item"
@@ -41,7 +43,7 @@ const ContactCardContainer = ({
         />
         {showDelete && (
           <IconContainer
-            onClick={onClick}
+            onClick={() => onDelete(id)}
             IconName={Icons.HIIcon.HiTrash}
             containerClassName="contactcard__action__icon"
             iconClassName="contactcard__action__item"

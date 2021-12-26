@@ -63,7 +63,7 @@ const updateACategory = ({ id, name, description }) => {
 };
 
 // Delete A Category
-const deleteACategory = ({ id }) => {
+const deleteACategory = (id: string) => {
   return new Promise((resolve, reject) => {
     indexDB.categories
       .delete(id)

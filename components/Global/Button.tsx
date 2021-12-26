@@ -22,9 +22,11 @@ export const IconButton = ({
   onClick,
   buttonClassname,
   iconClassname,
+  buttonText,
 }: IconButtonProps) => {
   return (
     <button className={`btn ` + buttonClassname} onClick={onClick}>
+      {buttonText}
       <Icon IconName={IconName} className={iconClassname} />
     </button>
   );
