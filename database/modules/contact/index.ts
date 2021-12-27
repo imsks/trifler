@@ -1,7 +1,8 @@
 import {
   AddContactModel,
-  getCategoryDetailsByCategoryId,
+  getCategoryByCategoryId,
   indexDB,
+  UpdateContactModel,
 } from 'database';
 import { Contact, ContactCard } from 'interfaces';
 import { getRanddomID } from 'utils';
@@ -33,6 +34,27 @@ const addAContact = ({ name, contactNo, categoryId = null }) => {
 
     indexDB.contacts
       .add(contact)
+      .then((value) => {
+        resolve(value);
+      })
+      .catch((error) => {
+        reject({ errorStack: error, message: 'Something went wrong' });
+      });
+  });
+};
+
+// Contact A Category
+const updateAContact = ({ id, name, contactNo, categoryId }) => {
+  return new Promise((resolve, reject) => {
+    const updatedContact: UpdateContactModel = {
+      name,
+      contactNo,
+      categoryId,
+      updatedOn: new Date(Date.now()),
+    };
+
+    indexDB.contacts
+      .update(id, updatedContact)
       .then((value) => {
         resolve(value);
       })
@@ -98,7 +120,7 @@ const getAllContactsWithCategories = async (contacts: Contact[]) => {
 
       // If category ID exists
       if (categoryId) {
-        const category = await getCategoryDetailsByCategoryId(categoryId);
+        const category = await getCategoryByCategoryId(categoryId);
 
         return {
           id,
@@ -117,6 +139,22 @@ const getAllContactsWithCategories = async (contacts: Contact[]) => {
   );
 };
 
+// Get category details by category ID
+const getContactByContactId = (contactId: string): Promise<AddContactModel> => {
+  return new Promise((resolve, reject) => {
+    indexDB.contacts
+      .where('id')
+      .equals(contactId)
+      .first()
+      .then((value) => {
+        resolve(value);
+      })
+      .catch((error) =>
+        reject({ errorStack: error, message: 'Something went wrong' }),
+      );
+  });
+};
+
 export {
   getAllContacts,
   addAContact,
@@ -124,4 +162,6 @@ export {
   getContactsByCategoryID,
   getAllContactsWithCategories,
   deleteAllContactsByCategoryId,
+  getContactByContactId,
+  updateAContact,
 };

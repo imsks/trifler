@@ -16,7 +16,7 @@ import {
   deleteACategory,
   deleteAContact,
   deleteAllContactsByCategoryId,
-  getCategoryDetailsByCategoryId,
+  getCategoryByCategoryId,
   getContactsByCategoryID,
   updateACategory,
 } from 'database';
@@ -24,7 +24,7 @@ import { EmptyContacts } from 'assets';
 import { handleGoToAddContact, pageRoutes } from 'utils';
 import { CategoriesPageProps, CategoryPageQuery } from 'interfaces';
 
-const Categories = ({ router }: CategoriesPageProps) => {
+const EditCategory = ({ router }: CategoriesPageProps) => {
   const [id, setId] = useState<string>('');
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
@@ -42,7 +42,7 @@ const Categories = ({ router }: CategoriesPageProps) => {
     setId(id);
 
     try {
-      const { name, description } = await getCategoryDetailsByCategoryId(id);
+      const { name, description } = await getCategoryByCategoryId(id);
       setName(name);
       setDescription(description);
 
@@ -209,4 +209,4 @@ const Categories = ({ router }: CategoriesPageProps) => {
   );
 };
 
-export default withRouter(Categories);
+export default withRouter(EditCategory);

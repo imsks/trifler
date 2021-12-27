@@ -4,6 +4,7 @@ import {
   indexDB,
   UpdateCategoryModel,
 } from 'database';
+import { IndexableType } from 'dexie';
 import { Category, CategoryCard } from 'interfaces';
 import { getRanddomID } from 'utils';
 
@@ -22,7 +23,7 @@ const getAllCategories = () => {
 };
 
 // Add A Category
-const addACategory = ({ name, description }) => {
+const addACategory = ({ name, description }): Promise<string> => {
   return new Promise((resolve, reject) => {
     const category: AddCategoryModel = {
       id: getRanddomID(),
@@ -34,7 +35,7 @@ const addACategory = ({ name, description }) => {
     indexDB.categories
       .add(category)
       .then((value) => {
-        resolve(value);
+        resolve(value as string);
       })
       .catch((error) => {
         reject({ errorStack: error, message: 'Something went wrong' });
@@ -95,7 +96,7 @@ const getAllCategoriesWithContacts = async (categories: Category[]) => {
 };
 
 // Get category details by category ID
-const getCategoryDetailsByCategoryId = (
+const getCategoryByCategoryId = (
   categoryId: string,
 ): Promise<AddCategoryModel> => {
   return new Promise((resolve, reject) => {
@@ -118,5 +119,5 @@ export {
   updateACategory,
   deleteACategory,
   getAllCategoriesWithContacts,
-  getCategoryDetailsByCategoryId,
+  getCategoryByCategoryId,
 };

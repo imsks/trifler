@@ -22,6 +22,7 @@ export interface SelectInputFieldProps {
   placeholder: string;
   selectOptions?: Array<SelectOptionsType>;
   noOptionsText?: string;
+  selectedOptionKey?: string;
   onChange: React.ChangeEventHandler<HTMLSelectElement>;
 }
 

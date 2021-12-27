@@ -27,7 +27,7 @@ const InputField = ({
         <input
           className="form__container__input__container"
           type={type}
-          placeholder={!showLabel && placeholder}
+          placeholder={!showLabel ? placeholder : ''}
           onChange={onChange}
           required={required}
           autoFocus={autoFocus}
@@ -75,6 +75,7 @@ const SelectInputField = ({
   placeholder,
   selectOptions,
   noOptionsText,
+  selectedOptionKey,
   onChange,
 }: SelectInputFieldProps) => {
   return (
@@ -93,6 +94,7 @@ const SelectInputField = ({
                   className="form__container__select__option"
                   key={index}
                   defaultChecked={index === 0}
+                  selected={selectedOptionKey === value}
                 >
                   {label}
                 </option>

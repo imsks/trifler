@@ -16,8 +16,15 @@ export interface AddCategoryModel {
 }
 
 export interface UpdateCategoryModel {
-  name: string;
+  name?: string;
   description?: string;
+  updatedOn: Date;
+}
+
+export interface UpdateContactModel {
+  name?: string;
+  contactNo?: string;
+  categoryId?: string;
   updatedOn: Date;
 }
 
