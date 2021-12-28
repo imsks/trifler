@@ -9,7 +9,7 @@ const ContactsContainer = ({
   return (
     <div className="contacts__container__content__contacts">
       {contacts.map((contact, index) => {
-        const { id, name, categoryName, contactNo } = contact;
+        const { id, name, categoryName, contactNo, lastDialedOn } = contact;
         return (
           <ContactCardContainer
             key={index}
@@ -19,6 +19,7 @@ const ContactsContainer = ({
             contactNo={contactNo}
             showDelete={showDelete}
             onDelete={() => onDeleteContact(id)}
+            lastDialedOn={lastDialedOn}
           />
         );
       })}

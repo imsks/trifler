@@ -34,4 +34,5 @@ export interface ContactCard {
   name: string;
   contactNo: string;
   categoryName?: string;
+  lastDialedOn?: string;
 }

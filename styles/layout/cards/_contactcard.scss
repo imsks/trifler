@@ -16,6 +16,11 @@
       overflow: hidden;
       max-width: 20rem;
     }
+
+    &__subtitle {
+      color: $color-grey;
+      font-size: 1.2rem;
+    }
   }
 
   &__category {

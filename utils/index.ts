@@ -8,6 +8,7 @@ import {
 import {
   handleGoToAddCategory,
   handleGoToAddContact,
+  handleGoToContacts,
 } from 'utils/components/layout/emptycontainer';
 import { getRanddomID } from 'utils/functions';
 import pageRoutes from 'utils/page/routes';
@@ -31,4 +32,5 @@ export {
   handleGoToCategoryDetails,
   handleMakeCall,
   handleGoToContactDetails,
+  handleGoToContacts,
 };

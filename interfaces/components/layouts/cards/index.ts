@@ -6,6 +6,7 @@ export interface ContactCardProps {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   showDelete?: boolean;
   onDelete?: (id: string) => void;
+  lastDialedOn?: string;
 }
 
 export interface CategoryCardProps {

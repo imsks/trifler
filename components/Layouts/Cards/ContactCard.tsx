@@ -15,6 +15,7 @@ const ContactCardContainer = ({
   contactNo,
   showDelete,
   onDelete,
+  lastDialedOn,
 }: ContactCardProps) => {
   const handleCalling = async () => {
     // 1. Make a call
@@ -48,6 +49,14 @@ const ContactCardContainer = ({
                 {categoryName}
               </p>
             </div>
+          </>
+        )}
+        {lastDialedOn && (
+          <>
+            <Spacer block="7" />
+            <p className="contactcard__text__subtitle pre-text">
+              Last dialed: {lastDialedOn}
+            </p>
           </>
         )}
       </div>
