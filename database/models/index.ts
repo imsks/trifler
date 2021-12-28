@@ -15,6 +15,22 @@ export interface AddCategoryModel {
   updatedOn?: Date;
 }
 
+export interface AddUserModel {
+  id: string;
+  joinedOn: Date;
+  isStartedUsingApp?: boolean;
+}
+
+export interface AddRecentlyDialedContactsModel {
+  id: string;
+  contactId: string;
+  lastDialed: Date;
+}
+
+export interface UpdateRecentlyDialedContactsModel {
+  lastDialed: Date;
+}
+
 export interface UpdateCategoryModel {
   name?: string;
   description?: string;
@@ -26,10 +42,4 @@ export interface UpdateContactModel {
   contactNo?: string;
   categoryId?: string;
   updatedOn: Date;
-}
-
-export interface AddUserModel {
-  id: string;
-  joinedOn: Date;
-  isStartedUsingApp?: boolean;
 }
