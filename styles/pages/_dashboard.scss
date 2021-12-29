@@ -2,7 +2,16 @@
   &__container {
     &__content {
       width: 50%;
-      margin: auto;
+      margin: auto auto 5rem auto;
+
+      @include respond(tab-port) {
+        width: 55%;
+      }
+
+      @include respond(phone) {
+        width: 80%;
+        margin: auto auto 8rem auto;
+      }
     }
   }
 }

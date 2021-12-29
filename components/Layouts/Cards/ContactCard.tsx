@@ -33,6 +33,8 @@ const ContactCardContainer = ({
       return;
     }
 
+    // console.log(recentlyDialedId);
+
     // 2C. If contact exists, update the last dialed time
     await updateRecentlyDialedContact({ id: recentDialedContactId });
   };

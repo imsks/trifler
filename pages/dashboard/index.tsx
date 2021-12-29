@@ -16,8 +16,6 @@ const Dashboard = () => {
   const isLoggedIn = useRedirectToDashboard();
   const recentlyDialedContacts = useRecentDialedContacts();
 
-  console.log(recentlyDialedContacts);
-
   if (!isLoggedIn) return <Loader />;
 
   const emptyPageState = recentlyDialedContacts.length === 0 && (
@@ -26,7 +24,7 @@ const Dashboard = () => {
       heading="You havn't made any calls here yet"
       subHeading="Make a few calls to see recent dialed contacts"
       showButton={true}
-      ctaText="Make calls to your contacts"
+      ctaText="Make calls"
       ctaOnClick={handleGoToContacts}
     />
   );

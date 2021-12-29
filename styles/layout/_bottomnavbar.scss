@@ -7,6 +7,10 @@
 
     @include respond(phone) {
       bottom: 0;
+      width: 100%;
+      top: auto;
+      left: 0;
+      bottom: 0;
     }
 
     &__content {
@@ -20,6 +24,7 @@
       @include respond(phone) {
         width: 100%;
         border-radius: 0;
+        padding: 0.8rem 0;
       }
 
       &__items {
@@ -30,7 +35,7 @@
         padding: 0 0.5rem;
 
         @include respond(phone) {
-          justify-content: space-around;
+          justify-content: center;
           flex-direction: row;
         }
 
@@ -43,7 +48,7 @@
 
           @include respond(phone) {
             font-size: 1.8rem;
-            padding: 1rem 2rem;
+            padding: 0.5rem 1rem;
           }
 
           &:hover {
@@ -61,6 +66,10 @@
         &__icon {
           &:not(:first-child) {
             margin: 1rem 0 0 0;
+
+            @include respond(phone) {
+              margin: 0 0 0 5rem;
+            }
           }
         }
       }

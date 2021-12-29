@@ -4,8 +4,12 @@
   justify-content: space-between;
 
   &__text {
-    max-width: 80%;
-    
+    width: 80%;
+
+    @include respond(phone) {
+      width: 100%;
+    }
+
     &__heading {
       font-weight: 700;
     }

@@ -7,6 +7,15 @@
   justify-content: space-between;
   max-width: 34rem;
 
+  @include respond(tab-land) {
+    max-width: 24rem;
+  }
+
+  @include respond(phone) {
+    width: 100%;
+    max-width: inherit;
+  }
+
   &__text {
     &__title {
       color: $color-black;
@@ -52,6 +61,11 @@
       border-radius: 5px;
       cursor: pointer;
       transition: 0.1s all;
+
+      @include respond(phone) {
+        max-width: 24rem;
+        padding: 0.8rem;
+      }
 
       &:hover {
         background-color: $color-primary;
