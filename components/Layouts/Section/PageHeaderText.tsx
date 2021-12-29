@@ -28,7 +28,7 @@ const PageHeaderText = ({ title, text, actions }: PageHeaderTextProps) => {
       <div className="pageheadertext__text">
         <h3 className="pageheadertext__text__heading subtitle">{title}</h3>
         <Spacer block="8" />
-        <p className="pageheadertext__text__body pre-text">{text}</p>
+        <p className="pageheadertext__text__body small-text">{text}</p>
       </div>
       {actionsContainer}
     </div>

@@ -1,12 +1,5 @@
 import { useState } from 'react';
-import {
-  AddItemNavbar,
-  Button,
-  CategoryForm,
-  InputField,
-  Spacer,
-  TextAreaField,
-} from 'components';
+import { AddItemNavbar, CategoryForm, Spacer } from 'components';
 import { addACategory } from 'database';
 import Router from 'next/router';
 import { pageRoutes } from 'utils';
@@ -14,6 +7,7 @@ import { pageRoutes } from 'utils';
 const AddCategory = () => {
   const [name, setName] = useState<string>('');
   const [description, setDescription] = useState<string>('');
+  const [submitClicked, setSubmitClicked] = useState(false);
   const [formError, setFormError] = useState(null);
 
   const handleAddCategory = (event: React.MouseEvent<HTMLElement>) => {
@@ -24,6 +18,7 @@ const AddCategory = () => {
 
     event.preventDefault();
     setFormError(null);
+    setSubmitClicked(true);
 
     addACategory({ name, description })
       .then(() => {
@@ -31,6 +26,7 @@ const AddCategory = () => {
       })
       .catch((error) => {
         setFormError(error.message);
+        setSubmitClicked(false);
       });
   };
 
@@ -51,7 +47,7 @@ const AddCategory = () => {
             description={description}
             setName={setName}
             setDescription={setDescription}
-            submitButtonText="Update Category"
+            submitButtonText={!submitClicked ? 'Add Category' : 'Adding...'}
             submitHandler={handleAddCategory}
             formError={formError}
           />

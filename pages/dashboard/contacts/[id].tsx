@@ -175,7 +175,7 @@ const EditContact = ({ router }: EditContactPageProps) => {
               },
             ]}
           />
-          <Spacer block="3" />
+          <Spacer block="4" />
           {confirmDeleteContainer}
           <form className="editcontact__container__content__form form">
             <div className="editcontact__container__content__form__container form__container">
@@ -230,7 +230,9 @@ const EditContact = ({ router }: EditContactPageProps) => {
               <Spacer block="7" />
               <div className="editcontact__container__content__form__container__action">
                 <Button
-                  text={!updateContactClicked ? 'Add Contact' : 'Adding...'}
+                  text={
+                    !updateContactClicked ? 'Update Contact' : 'Updating...'
+                  }
                   className="btn-primary btn-md emptystate__container__actions-primary"
                   onClick={handleEditContact}
                 />

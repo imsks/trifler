@@ -15,13 +15,10 @@
       flex-direction: column;
       align-items: center;
 
-      @include respond(tab-land) {
-        width: 40%;
-      }
-
       @include respond(phone) {
         width: 100%;
         margin: 2rem 0 0 0;
+        text-align: center;
       }
 
       &__subheading {

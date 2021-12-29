@@ -31,6 +31,7 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
   const [contacts, setContacts] = useState<AddContactModel[]>([]);
   const [enableEdit, setEnableEdit] = useState<boolean>(false);
   const [showConfirmDelete, setShowConfirmDelete] = useState<boolean>(false);
+  const [submitClicked, setSubmitClicked] = useState(false);
   const [formError, setFormError] = useState<string>(null);
 
   useEffect(() => {
@@ -59,6 +60,13 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
   ) => {
     event.preventDefault();
 
+    if (!name) {
+      setFormError('Please fill the category name');
+      return;
+    }
+
+    setSubmitClicked(true);
+
     updateACategory({ id, name, description })
       .then(() => {
         setEnableEdit(false);
@@ -66,6 +74,7 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
       })
       .catch((error) => {
         setFormError(error);
+        setSubmitClicked(false);
       });
   };
 
@@ -114,7 +123,7 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
         description={description}
         setName={setName}
         setDescription={setDescription}
-        submitButtonText="Update Category"
+        submitButtonText={!submitClicked ? 'Update Category' : 'Updating...'}
         submitHandler={handleUpdateCategory}
         formError={formError}
       />
@@ -200,7 +209,6 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
           {confirmDeleteContainer}
           {contactsContainer}
           {emptyContactsState}
-
           {footerAddContactButton}
         </div>
         <Spacer block="6" />

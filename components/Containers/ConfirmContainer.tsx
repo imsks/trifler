@@ -12,7 +12,9 @@ const ConfirmContainer = ({
     <div className="confirm">
       <div className="confirm__text">
         <h3 className="confirm__text__heading strong-text">{title}</h3>
-        <p className="confirm__text__subheading pre-text">{subtitle} </p>
+        {subtitle && (
+          <p className="confirm__text__subheading pre-text">{subtitle} </p>
+        )}
       </div>
       <Spacer block="7" />
       <div className="confirm__actions">

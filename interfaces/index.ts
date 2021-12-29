@@ -8,4 +8,5 @@ export * from 'interfaces/components/layouts/section';
 export * from 'interfaces/components/layouts/cards';
 export * from 'interfaces/database/modules';
 export * from 'interfaces/containers/icon';
+export * from 'interfaces/containers/categoryform';
 export * from 'interfaces/page/category';

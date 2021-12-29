@@ -1,14 +1,5 @@
 import { Button, InputField, Spacer, TextAreaField } from 'components';
-
-interface CategoryFormProps {
-  name: string;
-  description: string;
-  setName: (value: string) => void;
-  setDescription: (value: string) => void;
-  formError: string;
-  submitButtonText: string;
-  submitHandler: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-}
+import { CategoryFormProps } from 'interfaces';
 
 const CategoryForm = ({
   name,
