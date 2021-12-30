@@ -85,12 +85,10 @@ const getAllRecentDialedContactsForCard = async (
     result.map(async (recentlyDialedContact) => {
       const { contactId, lastDialed } = recentlyDialedContact;
 
-      // Get contact data from contactId
       const { name, contactNo, categoryId } = await getContactByContactId(
         contactId,
       );
 
-      // Get category data from categoryId
       const category = await getCategoryByCategoryId(categoryId);
 
       const lastDialedDate = new Date(lastDialed);

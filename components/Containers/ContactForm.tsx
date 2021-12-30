@@ -1,20 +1,5 @@
 import { Button, InputField, SelectInputField, Spacer } from 'components';
-import { SelectOptionsType } from 'interfaces';
-
-interface ContactFormProps {
-  name: string;
-  contactNo: string;
-  categoryName?: string;
-  setName: (value: string) => void;
-  setContactNo: (value: string) => void;
-  setCategoryName: (value: string) => void;
-  setCategory: (value: SelectOptionsType) => void;
-  selectOptions: SelectOptionsType[];
-  addContactClicked: boolean;
-  handleSelectCategory: (event: React.ChangeEvent<HTMLSelectElement>) => void;
-  formError: string;
-  onClick: (event: React.MouseEvent<HTMLElement, MouseEvent>) => void;
-}
+import { ContactFormProps } from 'interfaces';
 
 const ContactForm = ({
   name,

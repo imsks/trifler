@@ -3,7 +3,7 @@ import {
   FloatingActionButtonProps,
   IconButtonProps,
 } from 'interfaces';
-import Icon from './Icon';
+import { Icon } from 'components';
 
 export const Button = ({
   text,

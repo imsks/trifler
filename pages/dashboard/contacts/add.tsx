@@ -41,19 +41,14 @@ const AddContact = () => {
     setFormError(null);
     setAddContactClicked(true);
 
-    // 1. If category is provided
     let categoryId = null;
 
-    // 1A. Category doesn't exist, Add category to DB
     if (categoryName) {
       categoryId = await addACategory({
         name: categoryName,
         description: null,
       });
-    }
-
-    // 1B. Category exists already
-    else {
+    } else {
       categoryId = category.value;
     }
 

@@ -3,7 +3,7 @@ import {
   addAContactToRecentlyDialedContact,
   getRecentlyDialContactIdIfExists,
   updateRecentlyDialedContact,
-} from 'database/modules/recentDialedCalls';
+} from 'database';
 import { ContactCardProps } from 'interfaces';
 import { handleMakeCall } from 'utils';
 import { handleGoToContactDetails } from 'utils';
@@ -18,24 +18,17 @@ const ContactCardContainer = ({
   lastDialedOn,
 }: ContactCardProps) => {
   const handleCalling = async () => {
-    // 1. Make a call
     handleMakeCall(contactNo);
 
-    // 2. Add to recent dialed calls
-    // 2A. Check if contact exists already
     const recentDialedContactId = await getRecentlyDialContactIdIfExists({
       contactId: id,
     });
 
-    // 2B. If contact does not exist, add to recent dialed calls
     if (!recentDialedContactId) {
       await addAContactToRecentlyDialedContact({ contactId: id });
       return;
     }
 
-    // console.log(recentlyDialedId);
-
-    // 2C. If contact exists, update the last dialed time
     await updateRecentlyDialedContact({ id: recentDialedContactId });
   };
 

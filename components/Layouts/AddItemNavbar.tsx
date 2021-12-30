@@ -1,10 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from 'assets';
-import { Icons } from 'components';
+import { Icons, IconButton } from 'components';
 import { AddItemNavbarProps } from 'interfaces';
 import { handleGoBack, pageRoutes } from 'utils';
-import { IconButton } from 'components/Global/Button';
 
 const AddItemNavbar = ({ title }: AddItemNavbarProps) => {
   return (

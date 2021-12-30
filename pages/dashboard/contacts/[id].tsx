@@ -52,7 +52,6 @@ const EditContact = ({ router }: EditContactPageProps) => {
     const { id } = router.query as unknown as EditContactPageQuery;
     setId(id);
 
-    // Get contact data by getContactByContactId()
     const { name, contactNo, categoryId } = await getContactByContactId(id);
     setName(name);
     setContactNo(contactNo);
@@ -80,10 +79,8 @@ const EditContact = ({ router }: EditContactPageProps) => {
     setFormError(null);
     setUpdateContactClicked(true);
 
-    // // 1. If category is provided
     let id = categoryId;
 
-    // 1A. Category doesn't exist, Add category to DB
     if (categoryName) {
       id = await addACategory({
         name: categoryName,
@@ -91,15 +88,11 @@ const EditContact = ({ router }: EditContactPageProps) => {
       });
 
       setCategoryId(id);
-    }
-
-    // 1B. Category exists already
-    else {
+    } else {
       id = category.value;
       setCategoryId(id);
     }
 
-    // 2. Update contact
     updateAContact({ id: contactId, name, contactNo, categoryId: id })
       .then(() => {
         setUpdateContactClicked(false);

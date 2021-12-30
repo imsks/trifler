@@ -1,7 +1,7 @@
 import { AboutProductItemProps } from 'interfaces';
 import { AccessDenied, EasyConnect, MakeGroups } from 'assets';
 
-export const aboutProductItems: Array<AboutProductItemProps> = [
+const aboutProductItems: Array<AboutProductItemProps> = [
   {
     text: 'Easy connect with new people',
     imageSrc: EasyConnect,
@@ -18,3 +18,5 @@ export const aboutProductItems: Array<AboutProductItemProps> = [
     imageAlt: 'trifler-make-groups',
   },
 ];
+
+export { aboutProductItems };

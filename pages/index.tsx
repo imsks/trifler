@@ -1,8 +1,14 @@
 import React from 'react';
-import { AboutProductItem, Button, Footer, Loader, Navbar } from 'components';
+import {
+  AboutProductItem,
+  Button,
+  Footer,
+  Loader,
+  Navbar,
+  Spacer,
+} from 'components';
 import Image from 'next/image';
 import { HeaderHero } from 'assets';
-import { Spacer } from 'components';
 import { aboutProductItems } from 'database';
 import { handleUseApp, handleKnowMore } from 'utils';
 import { useRedirectToDashboard } from 'hooks';

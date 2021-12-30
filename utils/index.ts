@@ -1,22 +1,19 @@
-import { handleUseApp, handleKnowMore } from 'utils/components/layout/navbar';
-import { handleGoBack } from 'utils/components/layout/additemnavbar';
 import {
+  handleGoBack,
   handleGoDashboard,
-  handleGoCategory,
   handleGoContacts,
-} from 'utils/components/layout/bottomnavbar';
-import {
-  handleGoToAddCategory,
-  handleGoToAddContact,
-  handleGoToContacts,
-} from 'utils/components/layout/emptycontainer';
-import { getRanddomID } from 'utils/functions';
-import pageRoutes from 'utils/page/routes';
-import {
+  handleGoCategory,
   handleGoToCategoryDetails,
   handleMakeCall,
   handleGoToContactDetails,
-} from 'utils/components/layout/cards';
+  handleGoToAddContact,
+  handleGoToAddCategory,
+  handleGoToContacts,
+  handleUseApp,
+  handleKnowMore,
+} from 'utils/page/route-functions';
+import { getRanddomID } from 'utils/functions';
+import pageRoutes from 'utils/page/routes';
 
 export {
   handleUseApp,

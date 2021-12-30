@@ -1,5 +1,4 @@
-import { Icons, Spacer } from 'components';
-import { IconButton } from 'components/Global/Button';
+import { Icons, Spacer, IconButton } from 'components';
 import { ConfirmContainerProps } from 'interfaces';
 
 const ConfirmContainer = ({

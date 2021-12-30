@@ -21,6 +21,7 @@ const createUser = async () => {
   });
 };
 
+// Check if user exists
 const isUserExist = async () => {
   return new Promise((resolve, reject) => {
     indexDB.users

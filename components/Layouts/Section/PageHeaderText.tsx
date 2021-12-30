@@ -1,5 +1,4 @@
-import { Spacer } from 'components';
-import { IconButton } from 'components/Global/Button';
+import { Spacer, IconButton } from 'components';
 import { PageHeaderTextProps } from 'interfaces';
 
 const PageHeaderText = ({ title, text, actions }: PageHeaderTextProps) => {

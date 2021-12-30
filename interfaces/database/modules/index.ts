@@ -31,7 +31,6 @@ export interface CategoryCard {
 
 export interface ContactCard {
   id: string;
-  // recentlyDialedId?: string;
   name: string;
   contactNo: string;
   categoryName?: string;

@@ -4,7 +4,6 @@ import {
   indexDB,
   UpdateCategoryModel,
 } from 'database';
-import { IndexableType } from 'dexie';
 import { Category, CategoryCard } from 'interfaces';
 import { getRanddomID } from 'utils';
 
