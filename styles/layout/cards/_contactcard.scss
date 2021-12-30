@@ -16,6 +16,17 @@
     max-width: inherit;
   }
 
+  &__incategory {
+    @include respond(tab-land) {
+      max-width: 30rem;
+    }
+
+    @include respond(tab-port) {
+      width: 100%;
+      max-width: inherit;
+    }
+  }
+
   &__text {
     &__title {
       color: $color-black;

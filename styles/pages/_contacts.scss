@@ -21,6 +21,12 @@
         @include respond(tab-land) {
           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         }
+
+        &__incategory {
+          @include respond(tab-port) {
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          }
+        }
       }
     }
   }

@@ -4,12 +4,6 @@
   justify-content: space-between;
 
   &__text {
-    width: 80%;
-
-    @include respond(phone) {
-      width: 100%;
-    }
-
     &__heading {
       font-weight: 700;
     }
@@ -20,8 +14,6 @@
   }
 
   &__actions {
-    margin-left: 4rem;
-
     &__item {
       padding: 0.5rem 1rem;
       border: 1px solid $color-grey !important;

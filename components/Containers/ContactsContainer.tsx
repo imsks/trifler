@@ -7,7 +7,11 @@ const ContactsContainer = ({
   onDeleteContact,
 }: ContactsContainerProps) => {
   return (
-    <div className="contacts__container__content__contacts">
+    <div
+      className={`contacts__container__content__contacts ${
+        showDelete && 'contacts__container__content__contacts__incategory'
+      }`}
+    >
       {contacts.map((contact, index) => {
         const { id, name, categoryName, contactNo, lastDialedOn } = contact;
         return (
