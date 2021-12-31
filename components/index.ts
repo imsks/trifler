@@ -25,6 +25,7 @@ import CategoryCard from 'components/Layouts/Cards/CategoryCard';
 import ContactCardContainer from 'components/Layouts/Cards/ContactCard';
 import ConfirmContainer from 'components/Containers/ConfirmContainer';
 import CategoryForm from 'components/Containers/CategoryForm';
+import InstallAppContainer from 'components/Containers/InstallAppContainer';
 
 export {
   Navbar,
@@ -50,4 +51,5 @@ export {
   ContactsContainer,
   ConfirmContainer,
   CategoryForm,
+  InstallAppContainer,
 };

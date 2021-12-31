@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from 'assets';
-import { Button } from 'components';
+import { InstallAppContainer } from 'components';
 import { NavbarProps } from 'interfaces';
-import { handleUseApp, pageRoutes } from 'utils';
+import { pageRoutes } from 'utils';
 import { useNavbarAvatar, useRedirectToDashboard } from 'hooks';
 
 const Navbar = ({ isLanding = false }: NavbarProps) => {
@@ -16,11 +16,7 @@ const Navbar = ({ isLanding = false }: NavbarProps) => {
 
   const navbarActions = isLanding && (
     <div className="navbar__container__actions">
-      <Button
-        text="Use App"
-        className="btn-primary btn-md navbar__container__actions__button-primary"
-        onClick={handleUseApp}
-      />
+      <InstallAppContainer />
     </div>
   );
 

@@ -17,11 +17,11 @@ const useRedirectToDashboard = () => {
     setTimeout(() => {
       isUserExist().then((userExists: boolean) => {
         if (userExists) {
-          router.push(redirectPath);
           setIsLoggedIn(true);
+          router.push(redirectPath);
         } else {
-          router.push(pageRoutes.landingPage.index);
           setIsLoggedIn(false);
+          router.push(pageRoutes.landingPage.index);
         }
       });
     }, 1000);

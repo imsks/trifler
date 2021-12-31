@@ -57,12 +57,18 @@
               }
             }
 
-            &-secondary {
-              margin-left: 1rem;
+            &-primary {
+              margin-right: 1rem;
+            }
 
+            &-secondary {
               @include respond(phone) {
                 margin: 1rem 0 0 0;
               }
+            }
+
+            &__text {
+              margin-top: 2rem;
             }
           }
         }

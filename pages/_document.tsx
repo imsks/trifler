@@ -1,10 +1,14 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document';
 
-export default class MyDocument extends NextDocument {
+class MyDocument extends NextDocument {
   render() {
     return (
-      <Html lang="en">
-        <Head></Head>
+      <Html>
+        <Head>
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/icon.png"></link>
+          <meta name="theme-color" content="#fff" />
+        </Head>
         <body>
           <Main />
           <NextScript />
@@ -13,3 +17,5 @@ export default class MyDocument extends NextDocument {
     );
   }
 }
+
+export default MyDocument;

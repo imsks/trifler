@@ -12,6 +12,7 @@ import {
   handleUseApp,
   handleKnowMore,
 } from 'utils/page/route-functions';
+import { handleInstallApp } from 'utils/page/dom-functions';
 import { getRanddomID } from 'utils/functions';
 import pageRoutes from 'utils/page/routes';
 
@@ -30,4 +31,5 @@ export {
   handleMakeCall,
   handleGoToContactDetails,
   handleGoToContacts,
+  handleInstallApp,
 };
