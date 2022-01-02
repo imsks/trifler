@@ -3,7 +3,7 @@
     "background_color": "#fafafa",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/",
+    "start_url": "/dashboard",
     "name": "Trifler",
     "short_name": "Trifler",
     "icons": [
