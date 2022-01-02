@@ -7,19 +7,13 @@
   font-family: $font-family, sans-serif;
   border-radius: 5px;
   transition: 0.3s all;
-  box-shadow: 5px 5px 15px rgba($color: $color-grey, $alpha: 0.1);
+  box-shadow: 5px 5px 15px rgba($color: $color-grey, $alpha: 0.3);
 
   &-primary {
     color: $color-white;
     background-color: $color-primary;
     transition: all 0.2s ease-in-out;
     border: 2px solid $color-primary;
-
-    &:hover {
-      background-color: transparent;
-      border: 2px solid $color-primary;
-      color: $color-primary;
-    }
   }
 
   &-secondary {
@@ -27,11 +21,6 @@
     background-color: transparent;
     border: 2px solid $color-primary;
     transition: all 0.2s ease-in-out;
-
-    &:hover {
-      background-color: $color-primary;
-      color: $color-white;
-    }
   }
 
   &-lg {
@@ -58,7 +47,7 @@
     font-weight: 600;
 
     @include respond(phone) {
-      padding: 1rem;
+      padding: 0.8rem 1.5rem;
     }
   }
 
@@ -66,5 +55,9 @@
     padding: 0.5rem 1.5rem;
     font-size: 1.5rem;
     font-weight: 500;
+  }
+
+  &:hover {
+    transform: scale(0.95);
   }
 }

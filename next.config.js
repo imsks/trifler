@@ -1,4 +1,6 @@
-module.exports = {
+const withPWA = require('next-pwa');
+
+module.exports = withPWA({
   webpackDevMiddleware: (config) => {
     config.watchOptions = {
       poll: 1000,
@@ -14,4 +16,9 @@ module.exports = {
       '/': { page: '/' },
     };
   },
-};
+  pwa: {
+    dest: 'public',
+    register: true,
+    skipWaiting: true,
+  },
+});

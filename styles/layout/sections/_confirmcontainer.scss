@@ -1,0 +1,41 @@
+.confirm {
+  &__text {
+    &__heading {
+    }
+
+    &__subheading {
+      margin-top: 0.5rem;
+      color: $color-grey;
+    }
+  }
+
+  &__actions {
+    width: fit-content;
+
+    &__item {
+      display: flex;
+
+      &-primary {
+        font-size: 2rem !important;
+      }
+
+      &-secondary {
+        margin-left: 1rem;
+        font-size: 2rem !important;
+        border: 1.5px solid $color-grey !important;
+      }
+
+      &__icon {
+        &-primary {
+          display: flex;
+        }
+
+        &-secondary {
+          transform: rotate(45deg);
+          display: flex;
+          color: $color-grey;
+        }
+      }
+    }
+  }
+}

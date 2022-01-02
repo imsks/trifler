@@ -7,8 +7,21 @@
 
 @import 'layout/navigation';
 @import 'layout/footer';
+@import 'layout/bottomnavbar';
+@import 'layout/additemnavbar';
+@import 'layout/sections/emptystate';
+@import 'layout/sections/pageheadertext';
+@import 'layout/sections/confirmcontainer';
+@import 'layout/cards/categorycard';
+@import 'layout/cards/contactcard';
 
-@import 'components/buttons';
-@import 'components/form';
+@import 'components/global/buttons';
+@import 'components/global/form';
+@import 'components/global/loader';
+@import 'components/global/floatingactionbutton';
+@import 'components/page/landing';
 
 @import 'pages/landing';
+@import 'pages/dashboard';
+@import 'pages/contacts';
+@import 'pages/categories';

@@ -1,5 +1,6 @@
-const title = 'Next App';
-const description = '';
+const title = 'Trifler';
+const description =
+  "Trifler helps you store temporary contacts that you don't want to store in your phone";
 
 const SEO = {
   title,

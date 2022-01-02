@@ -1,0 +1,24 @@
+.footer {
+  &__container {
+    padding: 1rem 0;
+    background-color: $color-black;
+
+    &__content {
+      justify-content: space-around;
+      display: flex;
+      align-items: center;
+
+      &__text {
+        color: $color-white;
+
+        span {
+          color: $color-primary;
+        }
+
+        a {
+          color: $color-white;
+        }
+      }
+    }
+  }
+}
