@@ -15,19 +15,16 @@ import {
   deleteAContact,
 } from 'database';
 import { useCategories } from 'hooks';
-import { SelectOptionsType, ShowCategory } from 'interfaces';
-import Router, { NextRouter } from 'next/router';
+import {
+  EditContactPageProps,
+  EditContactPageQuery,
+  SelectOptionsType,
+  ShowCategory,
+} from 'interfaces';
+import Router from 'next/router';
 import { withRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { pageRoutes } from 'utils';
-
-export interface EditContactPageProps {
-  router: NextRouter;
-}
-
-export interface EditContactPageQuery {
-  id: string;
-}
 
 const EditContact = ({ router }: EditContactPageProps) => {
   const [contactId, setId] = useState<string>('');
@@ -70,7 +67,7 @@ const EditContact = ({ router }: EditContactPageProps) => {
       return;
     }
 
-    if (!contactNo || contactNo.length !== 1) {
+    if (!contactNo || contactNo.length !== 10) {
       setFormError('Please enter the correct contact number');
       return;
     }

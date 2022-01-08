@@ -152,10 +152,10 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
     <>
       <EmptyStateContainer
         imageSrc={EmptyContacts}
-        heading="No contacts added in this category"
-        subHeading=" Add a temporary contact and make a call"
+        heading="No contacts found"
+        subHeading="You can add or update contact and associate with a category"
         showButton={true}
-        ctaText="Add new contact"
+        ctaText="Add a contact"
         ctaOnClick={handleGoToAddContact}
       />
       <Spacer block="6" />
@@ -164,7 +164,7 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
 
   const footerAddContactButton = contacts.length > 0 && (
     <Button
-      text="Add contacts"
+      text="Add a contact"
       className="btn-primary btn-sm emptystate__container__actions-primary"
       onClick={handleGoToAddContact}
     />
@@ -182,28 +182,32 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
     </>
   );
 
+  const ediCategoryActions = [
+    {
+      IconName: !enableEdit ? Icons.HIIcon.HiPencil : Icons.HIIcon.HiMinus,
+      onClick: handleSetEnableEdit,
+    },
+    {
+      IconName: Icons.HIIcon.HiTrash,
+      onClick: handleConfirmDelete,
+    },
+  ];
+
+  const editCategoryHeader = (
+    <PageHeaderText
+      title={name}
+      text={description}
+      actions={ediCategoryActions}
+    />
+  );
+
   return (
     <main className="editcategory">
       <div className="editcategory__container">
         <AddItemNavbar />
         <Spacer block="6" />
         <div className="editcategory__container__content">
-          <PageHeaderText
-            title={name}
-            text={description}
-            actions={[
-              {
-                IconName: !enableEdit
-                  ? Icons.HIIcon.HiPencil
-                  : Icons.HIIcon.HiMinus,
-                onClick: handleSetEnableEdit,
-              },
-              {
-                IconName: Icons.HIIcon.HiTrash,
-                onClick: handleConfirmDelete,
-              },
-            ]}
-          />
+          {editCategoryHeader}
           <Spacer block="4" />
           {editCategoryForm}
           {confirmDeleteContainer}

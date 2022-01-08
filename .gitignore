@@ -7,6 +7,6 @@ node_modules
 temp.txt
 /data
 /public/sw.js
-/public/sw.js.map
+public/sw.js.map
 /public/workbox-9a8b0a38.js
 /public/workbox-9a8b0a38.js.map

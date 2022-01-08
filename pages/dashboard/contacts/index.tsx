@@ -19,10 +19,10 @@ const Contacts = () => {
   const emptyPageState = contacts.length === 0 && (
     <EmptyStateContainer
       imageSrc={EmptyContacts}
-      heading="You havn't added any contacts so far."
-      subHeading=" Add a temporary contact in here and make a call"
+      heading="You haven't added any contact."
+      subHeading="Add a contact to get started"
       showButton={true}
-      ctaText="Add your first contact"
+      ctaText="Add first contact"
       ctaOnClick={handleGoToAddContact}
     />
   );
@@ -40,8 +40,7 @@ const Contacts = () => {
     <>
       <PageHeaderText
         title="All contacts"
-        text="Here you'll find all contacts you added. You can create as many as you
-              want"
+        text="All your contacts. You can add as many as you want."
       />
       <Spacer block="4" />
     </>

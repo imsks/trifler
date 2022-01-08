@@ -32,7 +32,7 @@ const AddContact = () => {
       return;
     }
 
-    if (!contactNo || contactNo.length !== 1) {
+    if (!contactNo || contactNo.length !== 10) {
       setFormError('Please enter the correct contact number');
       return;
     }

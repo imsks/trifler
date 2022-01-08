@@ -20,10 +20,10 @@ const Categories = () => {
   const emptyPageState = categories.length === 0 && (
     <EmptyStateContainer
       imageSrc={EmptyCategories}
-      heading="You havn't added any categories so far."
-      subHeading=" Add a temporary category in here and make a call"
+      heading="You haven't added any category"
+      subHeading="Add a category to get started."
       showButton={true}
-      ctaText="Add your first category"
+      ctaText="Add first category"
       ctaOnClick={handleGoToAddCategory}
     />
   );
@@ -41,8 +41,7 @@ const Categories = () => {
     <>
       <PageHeaderText
         title="All categories"
-        text="Take a look at all the categories. You can create as many as you
-              want"
+        text="All your categories. You can create as many as you want."
       />
       <Spacer block="4" />
     </>

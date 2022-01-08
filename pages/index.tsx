@@ -32,11 +32,12 @@ const IndexPage = () => {
               </div>
               <div className="landing__container__hero__container__content__text">
                 <h1 className="landing__container__hero__container__content__text__heading title-h2">
-                  Make your contacts just one tap away.
+                  A phonebook app for minimalists.
                 </h1>
                 <Spacer block="8" />
                 <h4 className="landing__container__hero__container__content__text__subheading body">
-                  Bring your phonebook on cloud without any storage, for free.
+                  Trifler helps you organize the people you meet day to day, in
+                  a minimal way.
                 </h4>
                 <Spacer block="6" />
                 <div className="landing__container__hero__container__content__actions">
@@ -58,13 +59,13 @@ const IndexPage = () => {
             <div className="landing__container__aboutproduct__container__content">
               <div className="landing__container__aboutproduct__container__content__hero">
                 <h2 className="landing__container__aboutproduct__container__content__hero__heading title-h3">
-                  Trifler helps organize your temparary contacts.
+                  Manage your contacts without getting overwhelmed.
                 </h2>
                 <Spacer block="8" />
                 <p className="landing__container__aboutproduct__container__content__hero__subheading body">
-                  And it all becomes a mess when you’ve to someone’s contact in
-                  your phone and never uses. Trifler solves that problem by
-                  putting everything on cloud.
+                  Saving every person's contact in your phonebook is a waste
+                  when you want them for a limited time. Trifler allows you to
+                  manage them with categories to make them easily accessible.
                 </p>
               </div>
               <Spacer block="6" />
