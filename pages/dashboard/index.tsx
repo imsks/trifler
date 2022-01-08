@@ -21,10 +21,10 @@ const Dashboard = () => {
   const emptyPageState = recentlyDialedContacts.length === 0 && (
     <EmptyStateContainer
       imageSrc={EmptyContacts}
-      heading="You havn't made any calls here yet"
-      subHeading="Make a few calls to see recent dialed contacts"
+      heading="All calls you make will appear here"
+      subHeading="Make some calls to add in recently dialed contacts."
       showButton={true}
-      ctaText="Make calls"
+      ctaText="Make a call"
       ctaOnClick={handleGoToContacts}
     />
   );
@@ -32,8 +32,8 @@ const Dashboard = () => {
   const pageHeader = recentlyDialedContacts.length > 0 && (
     <>
       <PageHeaderText
-        title="Recently Dialed"
-        text="Here you'll find people whom you called recently"
+        title="Recently Dialed Contacts"
+        text="You've called these people recently."
       />
       <Spacer block="4" />
     </>

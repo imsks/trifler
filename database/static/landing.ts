@@ -3,7 +3,7 @@ import { AccessDenied, EasyConnect, MakeGroups } from 'assets';
 
 const aboutProductItems: Array<AboutProductItemProps> = [
   {
-    text: 'Easy connect with new people',
+    text: 'Save contacts without thinking twice',
     imageSrc: EasyConnect,
     imageAlt: 'trifler-easy-connect',
   },
@@ -13,7 +13,7 @@ const aboutProductItems: Array<AboutProductItemProps> = [
     imageAlt: 'trifler-access-denied',
   },
   {
-    text: 'Categorize contacts and access them in one click',
+    text: 'Categorize contacts and access them easily',
     imageSrc: MakeGroups,
     imageAlt: 'trifler-make-groups',
   },

@@ -9,4 +9,5 @@ export * from 'interfaces/components/layouts/cards';
 export * from 'interfaces/database/modules';
 export * from 'interfaces/containers';
 export * from 'interfaces/page/category';
+export * from 'interfaces/page/contact';
 export * from 'interfaces/hooks';
