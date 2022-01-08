@@ -11,6 +11,10 @@
       width: 80%;
     }
 
+    @include respond(phone) {
+      width: 90%;
+    }
+
     &__logo {
       width: 10rem;
     }

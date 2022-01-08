@@ -14,17 +14,16 @@ const useRedirectToDashboard = () => {
       : router.asPath;
 
   useEffect(() => {
-    setTimeout(() => {
-      isUserExist().then((userExists: boolean) => {
-        if (userExists) {
-          setIsLoggedIn(true);
-          router.push(redirectPath);
-        } else {
-          setIsLoggedIn(false);
-          router.push(pageRoutes.landingPage.index);
-        }
-      });
-    }, 1000);
+    isUserExist().then((userExists: boolean) => {
+      if (userExists) {
+        setIsLoggedIn(true);
+        router.push(redirectPath);
+        return;
+      }
+
+      setIsLoggedIn(false);
+      router.push(pageRoutes.landingPage.index);
+    });
   }, []);
 
   return isLoggedIn;

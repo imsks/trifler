@@ -11,10 +11,8 @@ const Footer = () => {
           </p>
           <p className="footer__container__content__text pre-text">
             Made with <span>❤️</span> by{' '}
-            <Link href="https://sachinshukla.tech" passHref={true}>
-              <a href="https://sachinshukla.tech" target="_blank">
-                Sachin
-              </a>
+            <Link href="https://bio.link/imsks" passHref={true}>
+              <a target="_blank">Sachin</a>
             </Link>{' '}
             in 🇮🇳
           </p>
