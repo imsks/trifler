@@ -11,7 +11,7 @@ import {
 import Image from 'next/image';
 import { HeaderHero } from 'assets';
 import { aboutProductItems } from 'database';
-import { handleKnowMore } from 'utils';
+import { handleKnowMore, handleUseApp } from 'utils';
 import { useRedirectToDashboard } from 'hooks';
 
 const IndexPage = () => {
@@ -41,7 +41,11 @@ const IndexPage = () => {
                 </h4>
                 <Spacer block="6" />
                 <div className="landing__container__hero__container__content__actions">
-                  <InstallAppContainer />
+                  <Button
+                    text="Use App"
+                    className="btn-primary btn-md landing__container__hero__container__content__actions-primary"
+                    onClick={() => handleUseApp()}
+                  />
                   <Button
                     text="Know more"
                     className="btn-secondary btn-md landing__container__hero__container__content__actions-secondary"
