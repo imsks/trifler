@@ -1,7 +1,7 @@
 .categories {
   &__container {
     &__content {
-      width: 50%;
+      width: 60%;
       margin: auto auto 5rem auto;
 
       @include respond(tab-port) {
@@ -29,7 +29,7 @@
 .addcategory {
   &__container {
     &__content {
-      width: 50%;
+      width: 60%;
       margin: auto auto 5rem auto;
 
       @include respond(tab-port) {
@@ -58,7 +58,7 @@
 .editcategory {
   &__container {
     &__content {
-      width: 50%;
+      width: 60%;
       margin: auto auto 5rem auto;
 
       @include respond(tab-port) {

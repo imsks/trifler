@@ -3,7 +3,6 @@ import {
   AboutProductItem,
   Button,
   Footer,
-  InstallAppContainer,
   Loader,
   Navbar,
   Spacer,
@@ -52,6 +51,8 @@ const IndexPage = () => {
                     onClick={handleKnowMore}
                   />
                 </div>
+                <Spacer block="7" />
+                <p className="small-text">Launching V2 Soon...</p>
               </div>
             </div>
           </div>
