@@ -92,7 +92,6 @@ const getAllRecentDialedContactsForCard = async (
 
       let category: AddCategoryModel;
 
-      // If category found
       if (categoryId) category = await getCategoryByCategoryId(categoryId);
 
       const lastDialedDate = new Date(lastDialed);
