@@ -4,6 +4,8 @@
   justify-content: space-between;
 
   &__text {
+    flex: 1;
+
     &__heading {
       font-weight: 700;
     }
@@ -14,6 +16,8 @@
   }
 
   &__actions {
+    margin-left: 1rem;
+
     &__item {
       padding: 0.5rem 1rem;
       border: 1px solid $color-grey !important;
