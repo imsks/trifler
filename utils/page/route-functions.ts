@@ -52,6 +52,10 @@ const handleKnowMore = () => {
   Router.push(pageRoutes.landingPage.aboutSection);
 };
 
+const redirectToWhatsapp = (contactNo: string) => {
+  window.open(`https://wa.me/${contactNo}`, '_ blank');
+};
+
 export {
   handleGoBack,
   handleGoDashboard,
@@ -65,4 +69,5 @@ export {
   handleGoToContacts,
   handleUseApp,
   handleKnowMore,
+  redirectToWhatsapp,
 };

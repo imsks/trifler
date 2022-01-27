@@ -1,4 +1,5 @@
 import {
+  AddCategoryModel,
   AddRecentlyDialedContactsModel,
   getCategoryByCategoryId,
   getContactByContactId,
@@ -89,7 +90,10 @@ const getAllRecentDialedContactsForCard = async (
         contactId,
       );
 
-      const category = await getCategoryByCategoryId(categoryId);
+      let category: AddCategoryModel;
+
+      // If category found
+      if (categoryId) category = await getCategoryByCategoryId(categoryId);
 
       const lastDialedDate = new Date(lastDialed);
 
@@ -97,7 +101,7 @@ const getAllRecentDialedContactsForCard = async (
         id: contactId,
         name,
         contactNo,
-        categoryName: category.name,
+        categoryName: category ? category.name : '',
         lastDialedOn:
           lastDialedDate.toLocaleTimeString().substring(0, 5) +
           ' | ' +

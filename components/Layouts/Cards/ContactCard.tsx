@@ -5,7 +5,7 @@ import {
   updateRecentlyDialedContact,
 } from 'database';
 import { ContactCardProps } from 'interfaces';
-import { handleMakeCall } from 'utils';
+import { handleMakeCall, redirectToWhatsapp } from 'utils';
 import { handleGoToContactDetails } from 'utils';
 
 const ContactCardContainer = ({
@@ -14,8 +14,9 @@ const ContactCardContainer = ({
   categoryName,
   contactNo,
   showDelete,
-  onDelete,
+  showWhatsappButton,
   lastDialedOn,
+  onDelete,
 }: ContactCardProps) => {
   const handleCalling = async () => {
     handleMakeCall(contactNo);
@@ -31,6 +32,26 @@ const ContactCardContainer = ({
 
     await updateRecentlyDialedContact({ id: recentDialedContactId });
   };
+
+  const showDeleteContainer = showDelete && (
+    <IconContainer
+      onClick={() => onDelete(id)}
+      IconName={Icons.HIIcon.HiTrash}
+      containerClassName="contactcard__action__icon"
+      iconClassName="contactcard__action__item"
+      activeIconClassName={'contactcard__action__item--active'}
+    />
+  );
+
+  const showWhatsappButtonContainer = showWhatsappButton && (
+    <IconContainer
+      onClick={() => redirectToWhatsapp(contactNo)}
+      IconName={Icons.AntIcon.AiOutlineWhatsApp}
+      containerClassName="contactcard__action__icon"
+      iconClassName="contactcard__action__item"
+      activeIconClassName={'contactcard__action__item--active'}
+    />
+  );
 
   return (
     <div className={`contactcard ${showDelete && 'contactcard__incategory'}`}>
@@ -70,15 +91,8 @@ const ContactCardContainer = ({
           iconClassName="contactcard__action__item"
           activeIconClassName={'contactcard__action__item--active'}
         />
-        {showDelete && (
-          <IconContainer
-            onClick={() => onDelete(id)}
-            IconName={Icons.HIIcon.HiTrash}
-            containerClassName="contactcard__action__icon"
-            iconClassName="contactcard__action__item"
-            activeIconClassName={'contactcard__action__item--active'}
-          />
-        )}
+        {showWhatsappButtonContainer}
+        {showDeleteContainer}
       </div>
     </div>
   );

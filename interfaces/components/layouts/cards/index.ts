@@ -5,6 +5,7 @@ export interface ContactCardProps {
   contactNo: string;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   showDelete?: boolean;
+  showWhatsappButton?: boolean;
   onDelete?: (id: string) => void;
   lastDialedOn?: string;
 }
