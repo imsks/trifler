@@ -37,5 +37,6 @@ export interface ConfirmContainerProps {
 export interface ContactsContainerProps {
   contacts: ContactCard[];
   showDelete?: boolean;
+  showWhatsappButton?: boolean;
   onDeleteContact?: (id: string) => void;
 }

@@ -39,7 +39,6 @@
         color: $color-black-light;
         font-family: $font-family;
         transition: 0.3s all;
-        text-transform: capitalize;
 
         @include respond(phone) {
           padding: 1.2rem 2rem;

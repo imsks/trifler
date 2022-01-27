@@ -4,6 +4,7 @@ import { ContactsContainerProps } from 'interfaces';
 const ContactsContainer = ({
   contacts,
   showDelete,
+  showWhatsappButton,
   onDeleteContact,
 }: ContactsContainerProps) => {
   return (
@@ -22,8 +23,9 @@ const ContactsContainer = ({
             categoryName={categoryName}
             contactNo={contactNo}
             showDelete={showDelete}
-            onDelete={() => onDeleteContact(id)}
+            showWhatsappButton={showWhatsappButton}
             lastDialedOn={lastDialedOn}
+            onDelete={() => onDeleteContact(id)}
           />
         );
       })}
