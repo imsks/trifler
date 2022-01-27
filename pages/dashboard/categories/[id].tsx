@@ -141,7 +141,7 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
       <Spacer block="7" />
       <ContactsContainer
         contacts={contacts}
-        showDelete={true}
+        showWhatsappButton={true}
         onDeleteContact={handleContactDelete}
       />
       <Spacer block="6" />
