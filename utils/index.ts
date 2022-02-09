@@ -14,7 +14,7 @@ import {
   redirectToWhatsapp,
 } from 'utils/page/route-functions';
 import { handleInstallApp } from 'utils/page/dom-functions';
-import { getRanddomID, isValidContactNumber } from 'utils/functions';
+import { getRanddomID } from 'utils/functions';
 import pageRoutes from 'utils/page/routes';
 
 export {
@@ -33,6 +33,5 @@ export {
   handleGoToContactDetails,
   handleGoToContacts,
   handleInstallApp,
-  isValidContactNumber,
   redirectToWhatsapp,
 };
