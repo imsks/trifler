@@ -24,7 +24,7 @@ import {
 import Router from 'next/router';
 import { withRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { isValidContactNumber, pageRoutes } from 'utils';
+import { pageRoutes } from 'utils';
 
 const EditContact = ({ router }: EditContactPageProps) => {
   const [contactId, setId] = useState<string>('');
@@ -67,7 +67,7 @@ const EditContact = ({ router }: EditContactPageProps) => {
       return;
     }
 
-    if (!contactNo || !isValidContactNumber(contactNo)) {
+    if (!contactNo) {
       setFormError('Please enter the correct contact number');
       return;
     }
