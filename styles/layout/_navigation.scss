@@ -66,7 +66,7 @@
         }
 
         &__dropdown {
-          min-width: 10rem;
+          min-width: 12rem;
           border: 1px solid $color-grey;
           border-radius: 5px;
           display: block;
@@ -90,10 +90,13 @@
               white-space: nowrap;
               display: block;
               position: relative;
-              padding: 0.5rem 1.5rem;
 
-              &:not(:first-child) {
-                margin-bottom: 5px;
+              // &:not(:first-child) {
+              //   margin-bottom: 5px;
+              // }
+
+              &:hover {
+                background-color: $color-grey-light;
               }
             }
           }
@@ -102,8 +105,11 @@
             display: block;
             position: relative;
             text-decoration: none;
-            color: $color-grey;
+            color: $color-black;
             transition: 0.3s all;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 1.2rem 1.6rem;
 
             &:hover {
               color: $color-black;

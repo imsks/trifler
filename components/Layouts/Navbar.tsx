@@ -1,14 +1,21 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from 'assets';
-import { Button, InstallAppContainer } from 'components';
+import { Button } from 'components';
 import { NavbarProps } from 'interfaces';
-import { handleUseApp, pageRoutes } from 'utils';
-import { useNavbarAvatar, useRedirectToDashboard } from 'hooks';
+import { handleInstallApp, handleUseApp, pageRoutes } from 'utils';
+import {
+  useInstallAppButton,
+  useNavbarAvatar,
+  useRedirectToDashboard,
+} from 'hooks';
 
 const Navbar = ({ isLanding = false }: NavbarProps) => {
   const avatar = useNavbarAvatar();
   const isLoggedIn = useRedirectToDashboard();
+  const installAppEvent = useInstallAppButton();
+
+  console.log(installAppEvent);
 
   const logoUrl = isLoggedIn
     ? pageRoutes.dashboard
@@ -34,6 +41,28 @@ const Navbar = ({ isLanding = false }: NavbarProps) => {
             className="navbar__container__avtar__container__image__container"
           />
         </div>
+        <input
+          type="checkbox"
+          className="navbar__container__avtar__container__checkbox"
+        />
+        <div className="dd-c navbar__container__avtar__container__dropdown">
+          <ul className="navbar__container__avtar__container__dropdown__list">
+            {installAppEvent && (
+              <NavbarDropdownItem
+                onClick={() => handleInstallApp(installAppEvent)}
+                label="Install App"
+              />
+            )}
+            <NavbarDropdownItem
+              onClick={() => handleInstallApp(installAppEvent)}
+              label="Install App"
+            />
+            <NavbarDropdownItem
+              onClick={() => handleInstallApp(installAppEvent)}
+              label="Install App"
+            />
+          </ul>
+        </div>
       </div>
     </div>
   );
@@ -56,3 +85,21 @@ const Navbar = ({ isLanding = false }: NavbarProps) => {
 };
 
 export default Navbar;
+
+interface NavbarDropdownItemProps {
+  label: string;
+  onClick: () => void;
+}
+
+const NavbarDropdownItem = ({ label, onClick }: NavbarDropdownItemProps) => {
+  return (
+    <li className="navbar__container__avtar__container__dropdown__list__item">
+      <span
+        onClick={onClick}
+        className="navbar__container__avtar__container__dropdown__link pre-text"
+      >
+        {label}
+      </span>
+    </li>
+  );
+};
