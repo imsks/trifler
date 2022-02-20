@@ -47,7 +47,7 @@ const Contacts = () => {
   );
 
   const contactsContainer = contacts.length > 0 && (
-    <ContactsContainer contacts={contacts} />
+    <ContactsContainer contacts={contacts} showWhatsappButton={true} />
   );
 
   return (
