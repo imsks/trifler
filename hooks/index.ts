@@ -5,6 +5,7 @@ import useCategories from 'hooks/useCategories';
 import useRecentDialedContacts from 'hooks/useRecentDialedContacts';
 import useNavbarAvatar from 'hooks/useNavbarAvatar';
 import useInstallAppButton from 'hooks/useInstallAppButton';
+import useNavbarDropdownList from 'hooks/useNavbarDropdownList';
 
 export {
   useRedirectToDashboard,
@@ -14,4 +15,5 @@ export {
   useRecentDialedContacts,
   useNavbarAvatar,
   useInstallAppButton,
+  useNavbarDropdownList,
 };
