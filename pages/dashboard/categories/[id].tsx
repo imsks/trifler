@@ -131,12 +131,21 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
     </>
   );
 
+  const footerAddContactButton = contacts.length > 0 && (
+    <Button
+      text="Add contact"
+      className="btn-primary btn-sm emptystate__container__actions-primary"
+      onClick={handleGoToAddContact}
+    />
+  );
+
   const contactsContainer = contacts.length > 0 && (
     <>
-      <div className="editcategory__container__content__text ">
+      <div className="editcategory__container__content__text">
         <h3 className="editcategory__container__content__text__heading pre-text">
-          Contacts in this category
+          Contacts here
         </h3>
+        {footerAddContactButton}
       </div>
       <Spacer block="7" />
       <ContactsContainer
@@ -160,14 +169,6 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
       />
       <Spacer block="6" />
     </>
-  );
-
-  const footerAddContactButton = contacts.length > 0 && (
-    <Button
-      text="Add a contact"
-      className="btn-primary btn-sm emptystate__container__actions-primary"
-      onClick={handleGoToAddContact}
-    />
   );
 
   const confirmDeleteContainer = showConfirmDelete && (
@@ -213,7 +214,6 @@ const EditCategory = ({ router }: CategoriesPageProps) => {
           {confirmDeleteContainer}
           {contactsContainer}
           {emptyContactsState}
-          {footerAddContactButton}
         </div>
         <Spacer block="6" />
       </div>

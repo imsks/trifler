@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Logo } from 'assets';
-import { Button, InstallAppContainer } from 'components';
+import { Button, NavbarDropdownContainer } from 'components';
 import { NavbarProps } from 'interfaces';
 import { handleUseApp, pageRoutes } from 'utils';
 import { useNavbarAvatar, useRedirectToDashboard } from 'hooks';
@@ -34,6 +34,11 @@ const Navbar = ({ isLanding = false }: NavbarProps) => {
             className="navbar__container__avtar__container__image__container"
           />
         </div>
+        <input
+          type="checkbox"
+          className="navbar__container__avtar__container__checkbox"
+        />
+        <NavbarDropdownContainer />
       </div>
     </div>
   );

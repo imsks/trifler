@@ -10,7 +10,7 @@ const ContactsContainer = ({
   return (
     <div
       className={`contacts__container__content__contacts ${
-        showDelete && 'contacts__container__content__contacts__incategory'
+        showDelete ? 'contacts__container__content__contacts__incategory' : ''
       }`}
     >
       {contacts.map((contact, index) => {
