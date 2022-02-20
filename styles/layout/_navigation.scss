@@ -31,6 +31,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        animation: blink 1s ease-out 0s alternate 3 none running;
+
+        @keyframes blink {
+          from,
+          to {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
 
         &__image {
           width: 4rem;
@@ -90,14 +104,6 @@
               white-space: nowrap;
               display: block;
               position: relative;
-
-              // &:not(:first-child) {
-              //   margin-bottom: 5px;
-              // }
-
-              &:hover {
-                background-color: $color-grey-light;
-              }
             }
           }
 
@@ -112,7 +118,7 @@
             padding: 1.2rem 1.6rem;
 
             &:hover {
-              color: $color-black;
+              color: $color-primary;
             }
           }
         }

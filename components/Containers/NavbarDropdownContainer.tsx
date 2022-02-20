@@ -7,7 +7,7 @@ const NavbarDropdownContainer = () => {
   if (dropdownItems.length === 0) return null;
 
   return (
-    <div className="dd-c navbar__container__avtar__container__dropdown">
+    <div className="dd-c navbar__container__avtar__container__dropdown navbar__container__avtar__container__dropdown-blink">
       <ul className="navbar__container__avtar__container__dropdown__list">
         {dropdownItems.map((dropdownItem, key) => {
           const { label, onClick } = dropdownItem;
