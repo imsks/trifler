@@ -10,7 +10,7 @@ import { useCategories } from 'hooks';
 import { SelectOptionsType, ShowCategory } from 'interfaces';
 import Router from 'next/router';
 import { useState } from 'react';
-import { isValidContactNumber, pageRoutes } from 'utils';
+import { pageRoutes } from 'utils';
 
 const AddContact = () => {
   const [name, setName] = useState<string>('');
@@ -32,7 +32,7 @@ const AddContact = () => {
       return;
     }
 
-    if (!contactNo || !isValidContactNumber(contactNo)) {
+    if (!contactNo) {
       setFormError('Please enter the correct contact number');
       return;
     }

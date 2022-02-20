@@ -31,6 +31,20 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        animation: blink 1s ease-out 0s alternate 3 none running;
+
+        @keyframes blink {
+          from,
+          to {
+            opacity: 0;
+          }
+          50% {
+            opacity: 0.5;
+          }
+          100% {
+            opacity: 1;
+          }
+        }
 
         &__image {
           width: 4rem;
@@ -66,12 +80,12 @@
         }
 
         &__dropdown {
-          min-width: 10rem;
+          min-width: 12rem;
           border: 1px solid $color-grey;
           border-radius: 5px;
           display: block;
           position: absolute;
-          top: 4.8rem;
+          top: 5.5rem;
           right: 0;
           transform: scaleY(0);
           transform-origin: top left;
@@ -90,11 +104,6 @@
               white-space: nowrap;
               display: block;
               position: relative;
-              padding: 0.5rem 1.5rem;
-
-              &:not(:first-child) {
-                margin-bottom: 5px;
-              }
             }
           }
 
@@ -102,20 +111,16 @@
             display: block;
             position: relative;
             text-decoration: none;
-            color: $color-grey;
+            color: $color-black;
             transition: 0.3s all;
+            cursor: pointer;
+            font-size: 1.2rem;
+            padding: 1.2rem 1.6rem;
 
             &:hover {
-              color: $color-black;
+              color: $color-primary;
             }
           }
-        }
-      }
-    }
-
-    &__actions {
-      &__button {
-        &-primary {
         }
       }
     }

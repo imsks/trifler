@@ -54,7 +54,9 @@ const ContactCardContainer = ({
   );
 
   return (
-    <div className={`contactcard ${showDelete && 'contactcard__incategory'}`}>
+    <div
+      className={`contactcard ${showDelete ? 'contactcard__incategory' : ''}`}
+    >
       <div className="contactcard__text">
         <h3 className="contactcard__text__title body">{name}</h3>
         {categoryName && (
@@ -84,6 +86,7 @@ const ContactCardContainer = ({
           iconClassName="contactcard__action__item"
           activeIconClassName={'contactcard__action__item--active'}
         />
+        {showWhatsappButtonContainer}
         <IconContainer
           onClick={() => handleGoToContactDetails(id)}
           IconName={Icons.HIIcon.HiArrowRight}
@@ -91,7 +94,6 @@ const ContactCardContainer = ({
           iconClassName="contactcard__action__item"
           activeIconClassName={'contactcard__action__item--active'}
         />
-        {showWhatsappButtonContainer}
         {showDeleteContainer}
       </div>
     </div>

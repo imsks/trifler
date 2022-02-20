@@ -1,24 +1,7 @@
-import { InstallAppEvent, InstallPWAUserChoice } from 'interfaces';
-import { handleUseApp } from './route-functions';
+import { InstallAppEvent } from 'interfaces';
 
-const handleInstallApp = async (
-  installAppEvent: InstallAppEvent,
-  setShowInstallApp: React.Dispatch<React.SetStateAction<boolean>>,
-) => {
-  if (installAppEvent) {
-    installAppEvent.prompt();
-
-    const userChoice: InstallPWAUserChoice = await installAppEvent.userChoice;
-
-    // If app installed
-    if (userChoice.outcome === 'accepted') {
-      setShowInstallApp(false);
-      handleUseApp();
-    }
-    return;
-  }
-
-  setShowInstallApp(false);
+const handleInstallApp = async (installAppEvent: InstallAppEvent) => {
+  if (installAppEvent) installAppEvent.prompt();
 };
 
 export { handleInstallApp };
