@@ -18,7 +18,7 @@ export class MySubClassedDexie extends Dexie {
       contacts: 'id, name, contactNo, categoryId, addedon, updatedOn',
       categories: 'id, name, description, addedon, updatedOn',
       recentlyDialedContacts: 'id, contactId, lastDialed',
-      users: 'id, joinedOn, isStartedUsingApp',
+      users: 'id, token, joinedOn, isStartedUsingApp',
     });
   }
 }

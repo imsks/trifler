@@ -13,7 +13,10 @@ import {
   handleKnowMore,
   redirectToWhatsapp,
 } from 'utils/page/route-functions';
-import { handleInstallApp } from 'utils/page/dom-functions';
+import {
+  handleInstallApp,
+  generateInstallAppConfig,
+} from 'utils/page/dom-functions';
 import { getRanddomID } from 'utils/functions';
 import pageRoutes from 'utils/page/routes';
 
@@ -33,5 +36,6 @@ export {
   handleGoToContactDetails,
   handleGoToContacts,
   handleInstallApp,
+  generateInstallAppConfig,
   redirectToWhatsapp,
 };

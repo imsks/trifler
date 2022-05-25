@@ -17,6 +17,7 @@ export interface AddCategoryModel {
 
 export interface AddUserModel {
   id: string;
+  token?: string;
   joinedOn: Date;
   isStartedUsingApp?: boolean;
 }
