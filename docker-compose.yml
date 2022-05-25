@@ -1,11 +1,11 @@
 version: "3"
 
 services:
-  web:
+  trifler_web:
     build:
       context: .
       dockerfile: Dockerfile.dev
-    container_name: web
+    container_name: trifler_web
     restart: always
     volumes:
       - ./:/usr/src/app

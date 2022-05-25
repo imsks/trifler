@@ -12,3 +12,4 @@ export * from 'interfaces/containers';
 export * from 'interfaces/page/category';
 export * from 'interfaces/page/contact';
 export * from 'interfaces/hooks';
+export * from 'interfaces/global';
