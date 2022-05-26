@@ -15,8 +15,6 @@ const useNavbarDropdownList = () => {
     // Dropdown configs
     const installAppConfig = generateInstallAppConfig(installAppEvent);
 
-    console.log(installAppEvent);
-
     dropdownItems = [
       {
         ...(installAppEvent && installAppConfig),
@@ -26,6 +24,8 @@ const useNavbarDropdownList = () => {
         onClick: () => console.log('HI'),
       },
     ];
+
+    console.log(dropdownItems);
 
     setDropdownItems(dropdownItems);
   }, [installAppEvent]);
