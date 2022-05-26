@@ -4,4 +4,11 @@ const handleInstallApp = async (installAppEvent: InstallAppEvent) => {
   if (installAppEvent) installAppEvent.prompt();
 };
 
-export { handleInstallApp };
+const generateInstallAppConfig = (installAppEvent: InstallAppEvent) => {
+  return {
+    label: 'Install App',
+    onClick: () => handleInstallApp(installAppEvent),
+  };
+};
+
+export { handleInstallApp, generateInstallAppConfig };
