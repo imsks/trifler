@@ -1,3 +1,5 @@
+import { StaticImageData } from 'interfaces';
+
 export type AboutProductItemProps = {
   text: string;
   imageSrc: StaticImageData | string;

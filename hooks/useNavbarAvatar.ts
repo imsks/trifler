@@ -5,6 +5,7 @@ import {
   IronManHelmetavatar,
 } from 'assets';
 import { useEffect, useState } from 'react';
+import { StaticImageData } from 'interfaces';
 
 const useNavbarAvatar = () => {
   const [avatar, setAvatar] = useState<StaticImageData>(null);

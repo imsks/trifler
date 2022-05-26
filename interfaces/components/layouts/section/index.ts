@@ -1,5 +1,6 @@
 import { ContactCard } from 'interfaces';
 import { IconType } from 'react-icons';
+import { StaticImageData } from 'interfaces';
 
 export interface EmptyStateContainerProps {
   imageSrc: string | StaticImageData;

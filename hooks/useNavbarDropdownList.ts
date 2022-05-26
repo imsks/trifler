@@ -1,7 +1,7 @@
+import { useInstallAppButton } from 'hooks';
 import { NavbarDropdownItemProps } from 'interfaces';
 import { useEffect, useState } from 'react';
-import { handleInstallApp } from 'utils';
-import useInstallAppButton from './useInstallAppButton';
+import { generateInstallAppConfig } from 'utils';
 
 const useNavbarDropdownList = () => {
   const [dropdownItems, setDropdownItems] = useState<
@@ -10,18 +10,22 @@ const useNavbarDropdownList = () => {
   const installAppEvent = useInstallAppButton();
 
   useEffect(() => {
-    let dropdownItems = [];
+    let dropdownItems: Array<NavbarDropdownItemProps> = [];
 
-    // 1. Add Install App button
-    if (installAppEvent) {
-      dropdownItems = [
-        {
-          label: 'Install App',
-          onClick: () => handleInstallApp(installAppEvent),
-        },
-        ...dropdownItems,
-      ];
-    }
+    // Dropdown configs
+    const installAppConfig = generateInstallAppConfig(installAppEvent);
+
+    dropdownItems = [
+      {
+        ...(installAppEvent && installAppConfig),
+      },
+      {
+        label: 'Backup Data',
+        onClick: () => console.log('HI'),
+      },
+    ];
+
+    console.log(dropdownItems);
 
     setDropdownItems(dropdownItems);
   }, [installAppEvent]);
