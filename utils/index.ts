@@ -12,10 +12,12 @@ import {
   handleUseApp,
   handleKnowMore,
   redirectToWhatsapp,
+  handleGoToRegister,
 } from 'utils/page/route-functions';
 import {
   handleInstallApp,
   generateInstallAppConfig,
+  generateRegisterPageConfig,
 } from 'utils/page/dom-functions';
 import { getRanddomID } from 'utils/functions';
 import pageRoutes from 'utils/page/routes';
@@ -38,4 +40,6 @@ export {
   handleInstallApp,
   generateInstallAppConfig,
   redirectToWhatsapp,
+  handleGoToRegister,
+  generateRegisterPageConfig,
 };

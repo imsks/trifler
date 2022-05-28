@@ -26,10 +26,6 @@ const handleGoToContactDetails = (contactId: string) => {
   Router.push(pageRoutes.absoluteUrls.contacts + `/${contactId}`);
 };
 
-const handleMakeCall = (contactNo: string) => {
-  Router.push(`tel:${contactNo}`);
-};
-
 const handleGoToAddContact = () => {
   Router.push(`${pageRoutes.dashboard}${pageRoutes.contacts}/add`);
 };
@@ -40,6 +36,14 @@ const handleGoToContacts = () => {
 
 const handleGoToAddCategory = () => {
   Router.push(`${pageRoutes.dashboard}${pageRoutes.categories}/add`);
+};
+
+const handleGoToRegister = () => {
+  Router.push(pageRoutes.register);
+};
+
+const handleMakeCall = (contactNo: string) => {
+  Router.push(`tel:${contactNo}`);
 };
 
 const handleUseApp = () => {
@@ -70,4 +74,5 @@ export {
   handleUseApp,
   handleKnowMore,
   redirectToWhatsapp,
+  handleGoToRegister,
 };

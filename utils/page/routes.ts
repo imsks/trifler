@@ -6,6 +6,7 @@ const pageRoutes = {
   dashboard: '/dashboard',
   contacts: '/contacts',
   categories: '/categories',
+  register: '/register',
   absoluteUrls: {
     contacts: '/dashboard/contacts',
     categories: '/dashboard/categories',

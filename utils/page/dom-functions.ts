@@ -1,4 +1,5 @@
 import { InstallAppEvent } from 'interfaces';
+import { handleGoToRegister } from 'utils';
 
 const handleInstallApp = async (installAppEvent: InstallAppEvent) => {
   if (installAppEvent) installAppEvent.prompt();
@@ -11,4 +12,15 @@ const generateInstallAppConfig = (installAppEvent: InstallAppEvent) => {
   };
 };
 
-export { handleInstallApp, generateInstallAppConfig };
+const generateRegisterPageConfig = () => {
+  return {
+    label: 'Backup Contacts',
+    onClick: () => handleGoToRegister(),
+  };
+};
+
+export {
+  handleInstallApp,
+  generateInstallAppConfig,
+  generateRegisterPageConfig,
+};

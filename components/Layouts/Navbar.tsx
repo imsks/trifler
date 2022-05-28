@@ -6,7 +6,7 @@ import { NavbarProps } from 'interfaces';
 import { handleUseApp, pageRoutes } from 'utils';
 import { useNavbarAvatar, useRedirectToDashboard } from 'hooks';
 
-const Navbar = ({ isLanding = false }: NavbarProps) => {
+const Navbar = ({ showNavbarActions = false }: NavbarProps) => {
   const avatar = useNavbarAvatar();
   const isLoggedIn = useRedirectToDashboard();
 
@@ -14,7 +14,7 @@ const Navbar = ({ isLanding = false }: NavbarProps) => {
     ? pageRoutes.dashboard
     : pageRoutes.landingPage.index;
 
-  const navbarActions = isLanding && (
+  const navbarActions = showNavbarActions && (
     <div className="navbar__container__actions">
       <Button
         text="Use App"

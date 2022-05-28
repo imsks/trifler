@@ -1,3 +1,3 @@
 export interface NavbarProps {
-  isLanding?: boolean;
+  showNavbarActions?: boolean;
 }

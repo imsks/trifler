@@ -1,7 +1,7 @@
 import { useInstallAppButton } from 'hooks';
 import { NavbarDropdownItemProps } from 'interfaces';
 import { useEffect, useState } from 'react';
-import { generateInstallAppConfig } from 'utils';
+import { generateInstallAppConfig, generateRegisterPageConfig } from 'utils';
 
 const useNavbarDropdownList = () => {
   const [dropdownItems, setDropdownItems] = useState<
@@ -10,20 +10,19 @@ const useNavbarDropdownList = () => {
   const installAppEvent = useInstallAppButton();
 
   useEffect(() => {
-    let dropdownItems: Array<NavbarDropdownItemProps> = [];
+    const dropdownItems: Array<NavbarDropdownItemProps> = [];
 
-    // Dropdown configs
-    const installAppConfig = generateInstallAppConfig(installAppEvent);
+    // 1. Dropdown configs
+    // 1A. Install App Config
+    if (installAppEvent) {
+      const installAppConfig = generateInstallAppConfig(installAppEvent);
 
-    dropdownItems = [
-      {
-        ...(installAppEvent && installAppConfig),
-      },
-      {
-        label: 'Backup Data',
-        onClick: () => console.log('HI'),
-      },
-    ];
+      dropdownItems.push(installAppConfig);
+    }
+
+    // TODO: Check if User Data exists then only show Register Page Link
+    const registerPageConfig = generateRegisterPageConfig();
+    dropdownItems.push(registerPageConfig);
 
     console.log(dropdownItems);
 
