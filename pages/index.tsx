@@ -21,7 +21,7 @@ const IndexPage = () => {
   return (
     <main className="landing">
       <section className="landing__container">
-        <Navbar isLanding />
+        <Navbar showNavbarActions />
         <div className="landing__container__hero">
           <Spacer block="2" />
           <div className="landing__container__hero__container">
